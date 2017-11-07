@@ -1,0 +1,51 @@
+.App {
+    padding-top: 60px;
+    max-width: 1195px;
+    margin: auto;
+    font: Helvetica;
+}
+
+header div {
+    text-transform: uppercase;
+    float: right;
+    font-size: 16pt;
+}
+
+h1 {
+    font-size: 44pt;
+}
+
+p.desc {
+    font-size: 22pt;
+    color: #245A6E;
+}
+
+.sightings {
+    background: #245A6E;
+    color: white;
+}
+
+.sightings header {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    resize: vertical;
+    overflow: auto; */
+    background: #1C4352;
+    font-size: 22pt;
+    height: 122px;
+}
+
+.sightings h2 {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.sighting {
+    width: 50%;
+}
+
+h3 {
+    font-size: 40pt;
+}
