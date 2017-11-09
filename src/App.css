@@ -1,8 +1,10 @@
-.App {
-    padding-top: 60px;
+body {
+    /* padding-top: 60px; */
     max-width: 1195px;
-    margin: auto;
-    font: Helvetica;
+    /* margin: auto; */
+    /* margin: 60px auto 10px; */
+    font: Didot, Helvetica;
+    transform: scale(0.7);
 }
 
 header div {
@@ -18,6 +20,7 @@ h1 {
 p.desc {
     font-size: 22pt;
     color: #245A6E;
+    line-height: 26.4pt;
 }
 
 .sightings {
@@ -34,18 +37,51 @@ p.desc {
     background: #1C4352;
     font-size: 22pt;
     height: 122px;
+    padding-left: 90px;
+    margin-bottom: 90px;
 }
 
 .sightings h2 {
+    font-size: 22pt;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
 .sighting {
-    width: 50%;
+    width: 490px;
+    margin-left: 90px;
+    font-size: 13pt;
+    line-height: 15.6pt;
 }
 
 h3 {
     font-size: 40pt;
+    line-height: 43pt;
+    width: 490px;
+    height: 280px;
+    padding-left: 30px;
+    padding-top: 24px;
+    /* display: block; */
+}
+
+dt,
+dd {
+    display: inline;
+    margin: 0;
+    font-weight: bold;
+    line-height: 24pt;
+}
+
+dt {
+    text-transform: uppercase;
+}
+
+dt::after {
+    content: ': ';
+}
+
+dd::after {
+    content: "\a";
+    white-space: pre;
 }
