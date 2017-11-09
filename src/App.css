@@ -2,8 +2,12 @@ body {
     /* padding-top: 60px; */
     max-width: 1195px;
     /* margin: auto; */
-    /* margin: 60px auto 10px; */
+    margin: 60px auto 10px;
     font: Didot, Helvetica;
+}
+
+.App {
+    transform-origin: top left;
     transform: scale(0.7);
 }
 
@@ -46,6 +50,10 @@ p.desc {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
+}
+
+.sightings h2 img {
+    padding-right: 10px;
 }
 
 .sighting {
