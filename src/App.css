@@ -1,30 +1,28 @@
 body {
     /* padding-top: 60px; */
-    max-width: 1195px;
+    /* max-width: 1195px; */
+    width: 11in;
+    /* width: 1582px; */
     /* margin: auto; */
     margin: 60px auto 10px;
     font: Didot, Helvetica;
 }
 
-.App {
-    transform-origin: top left;
-    transform: scale(0.7);
-}
-
 header div {
     text-transform: uppercase;
     float: right;
-    font-size: 16pt;
+    font-size: 12pt;
 }
 
 h1 {
-    font-size: 44pt;
+    font-size: 33pt;
 }
 
 p.desc {
-    font-size: 22pt;
+    font-size: 16.5pt;
     color: #245A6E;
-    line-height: 26.4pt;
+    line-height: 19.8pt;
+    width: 8.882in;
 }
 
 .sightings {
@@ -32,42 +30,43 @@ p.desc {
     color: white;
 }
 
-.sightings header {
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    resize: vertical;
-    overflow: auto; */
+header.sightings {
     background: #1C4352;
-    font-size: 22pt;
-    height: 122px;
-    padding-left: 90px;
-    margin-bottom: 90px;
-}
-
-.sightings h2 {
-    font-size: 22pt;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 80px;
+    /* padding-left: 90px; */
+    padding-left: 57px;
+    /* margin-bottom: 90px; */
+    display: flex;
+    align-items: center;
+    font-size: 16.5pt;
 }
 
 .sightings h2 img {
     padding-right: 10px;
 }
 
+.sighting-list {
+    display: flex;
+    flex-wrap: wrap;
+    background: #2a7993;
+    /* padding-left: 90px; */
+    /* padding-left: 57px; */
+    margin-bottom: 90px;
+}
+
 .sighting {
-    width: 490px;
-    margin-left: 90px;
-    font-size: 13pt;
-    line-height: 15.6pt;
+    width: 320px;
+    padding-left: 57px;
+    padding-right: 50px;
+    font-size: 9.75pt;
+    line-height: 11.7pt;
 }
 
 h3 {
-    font-size: 40pt;
-    line-height: 43pt;
-    width: 490px;
-    height: 280px;
+    font-size: 30pt;
+    line-height: 32.25pt;
+    width: 320px;
+    height: 183px;
     padding-left: 30px;
     padding-top: 24px;
     /* display: block; */

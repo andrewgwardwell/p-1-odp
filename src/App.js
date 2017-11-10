@@ -44,11 +44,13 @@ class App extends Component {
           – JON STOLK
         </p>
 
-        <div className="sightings">
-          <header>
+        <div >
+          <header className="sightings">
             <h2><img src={sightingsLogo} alt="logo" />Sightings</h2>
           </header>
-          {this.state.sightings.map(Sighting)}
+          <section className="sighting-list">
+            {this.state.sightings.map(Sighting)}
+          </section>
         </div>
       </div>
     );
@@ -57,10 +59,10 @@ class App extends Component {
 
 function Sighting(props) {
   return <section className="sighting" key={props.key}>
-    <h3 style={{ background: 'url(poster.png)' }}>{props.topic}</h3>
+    <h3 style={{ background: 'url(poster.png)' }}>{props.title}</h3>
     <dl>
       <dt>Professor</dt>
-      <dd>{props.instructor}</dd>
+      <dd>{props.instructors}</dd>
       <dt>Class</dt>
       <dd>{props.course}</dd>
     </dl>
