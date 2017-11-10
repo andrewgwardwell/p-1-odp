@@ -1,9 +1,5 @@
 body {
-    /* padding-top: 60px; */
-    /* max-width: 1195px; */
     width: 11in;
-    /* width: 1582px; */
-    /* margin: auto; */
     margin: 60px auto 10px;
     font: Didot, Helvetica;
 }
@@ -25,7 +21,7 @@ p.desc {
     width: 8.882in;
 }
 
-.sightings {
+header.sightings {
     background: #245A6E;
     color: white;
 }
@@ -33,9 +29,7 @@ p.desc {
 header.sightings {
     background: #1C4352;
     height: 80px;
-    /* padding-left: 90px; */
     padding-left: 57px;
-    /* margin-bottom: 90px; */
     display: flex;
     align-items: center;
     font-size: 16.5pt;
@@ -45,12 +39,15 @@ header.sightings {
     padding-right: 10px;
 }
 
-.sighting-list {
+.sightings h2::before {
+    content: url(sightings.svg);
+    padding-right: 15px;
+}
+
+section.sightings {
     display: flex;
     flex-wrap: wrap;
     background: #2a7993;
-    /* padding-left: 90px; */
-    /* padding-left: 57px; */
     margin-bottom: 90px;
 }
 
@@ -62,33 +59,32 @@ header.sightings {
     line-height: 11.7pt;
 }
 
-h3 {
+.sighting h3 {
     font-size: 30pt;
     line-height: 32.25pt;
     width: 320px;
     height: 183px;
     padding-left: 30px;
     padding-top: 24px;
-    /* display: block; */
 }
 
-dt,
-dd {
+. .sighting dt,
+.sighting dd {
     display: inline;
     margin: 0;
     font-weight: bold;
     line-height: 24pt;
 }
 
-dt {
+.sighting dt {
     text-transform: uppercase;
 }
 
-dt::after {
+.sighting dt::after {
     content: ': ';
 }
 
-dd::after {
+.sighting dd::after {
     content: "\a";
     white-space: pre;
 }

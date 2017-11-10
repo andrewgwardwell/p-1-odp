@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ReactMarkdown from 'react-markdown';
 import './App.css';
 import logo from './logo.svg';
-import sightingsLogo from './sightings.svg';
 
 var config = {
   apiKey: "AIzaSyDW_PeMTIDfRwff2vev-PzQS2R1IV9_ZN0",
@@ -33,22 +32,23 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <header>
           <img src={logo} alt="logo" />
           <div>Design Elements</div>
         </header>
+
         <h1>Foster Student Autonomy</h1>
         <p className="desc">
           “Student development of self-directed learning skills is critical for success in today’s rapidly-changing engineering world. The details of how instructors may best foster engagement in life-long learning, however, are unclear; many educators have struggled to define, implement, and assess lifelong learning in engineering curricula.”
           – JON STOLK
         </p>
 
-        <div >
+        <div>
           <header className="sightings">
-            <h2><img src={sightingsLogo} alt="logo" />Sightings</h2>
+            <h2>Sightings</h2>
           </header>
-          <section className="sighting-list">
+          <section className="sightings">
             {this.state.sightings.map(Sighting)}
           </section>
         </div>
