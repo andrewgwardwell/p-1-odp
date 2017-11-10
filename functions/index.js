@@ -1,8 +1,9 @@
 const functions = require('firebase-functions');
+const cors = require('cors')({ origin: true });
+const ip6addr = require('ip6addr');
+
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
-
-const cors = require('cors')({ origin: true });
 
 exports.valid = functions.https.onRequest((req, res) => {
     cors(req, res, () => {
@@ -18,5 +19,5 @@ exports.valid = functions.https.onRequest((req, res) => {
 });
 
 function cdirContains(cdir, ip) {
-    return cdir.split('/', 2)[0] == ip;
+    return ip6addr.createCIDR(cdir).contains(ip)
 }
