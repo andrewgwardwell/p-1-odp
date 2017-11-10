@@ -11,6 +11,18 @@ class App extends Component {
     storage: PropTypes.object,
   };
 
+  state = { valid: null };
+
+  componentWillMount() {
+    let apiURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/olin-odes/us-central1' : '';
+    fetch(apiURL + '/valid')
+      .then(res => res.json())
+      .then(
+      ({ valid }) => this.setState({ valid }),
+      error => console.log('parsing failed', error)
+      );
+  }
+
   getChildContext() {
     const firestore = firebase.firestore()
     const storageRef = firebase.storage().ref();
@@ -18,7 +30,14 @@ class App extends Component {
   }
 
   render() {
-    return <ODEContainer ode-key='foster-student-autonomy' />
+    const { valid } = this.state;
+    if (valid == null) {
+      return "loading…";
+    } else if (valid) {
+      return <ODEContainer ode-key='foster-student-autonomy' />
+    } else {
+      return "This site can currently be viewed only from within the Olin intranet.";
+    }
   }
 }
 
