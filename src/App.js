@@ -14,7 +14,7 @@ var db = firebase.firestore();
 
 class App extends Component {
   render() {
-    return <ODE />
+    return <ODE ode-key='foster-student-autonomy' />
   }
 }
 
@@ -25,7 +25,7 @@ class ODE extends Component {
   }
 
   componentWillMount() {
-    db.collection('odes').doc('foster-student-autonomy').get().then((doc) => {
+    db.collection('odes').doc(this.props['ode-key']).get().then((doc) => {
       this.setState({ ode: doc.data() })
     }).catch(console.error);
     db.collection('sightings').get().then((qs) => {
