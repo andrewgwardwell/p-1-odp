@@ -1,38 +1,44 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 import './App.css';
 import logo from './logo.svg';
-
-let config = {
-  apiKey: "AIzaSyDW_PeMTIDfRwff2vev-PzQS2R1IV9_ZN0",
-  authDomain: "olin-odes.firebaseapp.com",
-  projectId: "olin-odes",
-  storageBucket: "olin-odes.appspot.com",
-};
-let firebase = window.firebase;
-firebase.initializeApp(config);
-let db = firebase.firestore();
-let storage = firebase.storage();
-let storageRef = storage.ref();
+import { firebase } from './firebase';
 
 class App extends Component {
+  static childContextTypes = {
+    firestore: PropTypes.object,
+    storage: PropTypes.object,
+  };
+
+  getChildContext() {
+    const firestore = firebase.firestore()
+    const storageRef = firebase.storage().ref();
+    return { firestore, storage: storageRef };
+  }
+
   render() {
     return <ODEContainer ode-key='foster-student-autonomy' />
   }
 }
 
 class ODEContainer extends Component {
+  static contextTypes = {
+    firestore: PropTypes.object
+  };
+
   state = { ode: {}, sightings: [] };
 
   componentWillMount() {
+    const db = this.context.firestore;
     db.collection('odes').doc(this.props['ode-key']).get().then(
       doc => this.setState({ ode: doc.data() }),
       error => console.error(error)
     );
     db.collection('sightings').get().then((qs) => {
-      let sightings = [];
+      const sightings = [];
       qs.forEach((ds) => {
-        let s = ds.data()
+        const s = ds.data()
         s.key = ds.id;
         sightings.push(s)
       })
@@ -66,11 +72,16 @@ const ODE = (props) =>
   </div>
 
 class SightingContainer extends Component {
+  static contextTypes = {
+    storage: PropTypes.object
+  };
+
   state = { background: 'blue' };
 
   componentWillMount() {
     if (this.props.poster) {
-      let posterRef = storageRef.child(this.props.poster);
+      const { storage } = this.context;
+      const posterRef = storage.child(this.props.poster);
       posterRef.getDownloadURL().then(
         poster_url => this.setState({ background: `url(${poster_url})` }),
         error => console.error(error)
