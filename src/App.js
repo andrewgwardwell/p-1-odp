@@ -17,20 +17,18 @@ let storageRef = storage.ref();
 
 class App extends Component {
   render() {
-    return <ODE ode-key='foster-student-autonomy' />
+    return <ODEContainer ode-key='foster-student-autonomy' />
   }
 }
 
-class ODE extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { ode: {}, sightings: [] };
-  }
+class ODEContainer extends Component {
+  state = { ode: {}, sightings: [] };
 
   componentWillMount() {
-    db.collection('odes').doc(this.props['ode-key']).get().then((doc) => {
-      this.setState({ ode: doc.data() })
-    }).catch(console.error);
+    db.collection('odes').doc(this.props['ode-key']).get().then(
+      doc => this.setState({ ode: doc.data() }),
+      error => console.error(error)
+    );
     db.collection('sightings').get().then((qs) => {
       let sightings = [];
       qs.forEach((ds) => {
@@ -42,66 +40,63 @@ class ODE extends Component {
     }).catch(console.error);
   }
 
-  render() {
-    return (
-      <div>
-        <header>
-          <img src={logo} alt="logo" />
-          <div>Design Elements</div>
-        </header>
-
-        <h1>{this.state.ode.title}</h1>
-        <p className="desc">
-          {this.state.ode.description}
-        </p>
-
-        <div>
-          <header className="sightings">
-            <h2>Sightings</h2>
-          </header>
-          <section className="sightings">
-            {this.state.sightings.map((x) => <Sighting key={x.key} {...x} />)}
-          </section>
-        </div>
-      </div>
-    );
-  }
+  render = () => <ODE {...this.state } />
 }
 
-class Sighting extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { background: 'blue' };
-  }
+const ODE = (props) =>
+  <div>
+    <header>
+      <img src={logo} alt="logo" />
+      <div>Design Elements</div>
+    </header>
+
+    <h1>{props.ode.title}</h1>
+    <p className="desc">
+      {props.ode.description}
+    </p>
+
+    <div>
+      <header className="sightings">
+        <h2>Sightings</h2>
+      </header>
+      <section className="sightings">
+        {props.sightings.map((s) => <SightingContainer key={s.key} {...s} />)}
+      </section>
+    </div>
+  </div>
+
+class SightingContainer extends Component {
+  state = { background: 'blue' };
 
   componentWillMount() {
     if (this.props.poster) {
       let posterRef = storageRef.child(this.props.poster);
-      posterRef.getDownloadURL().then((poster_url) => {
-        this.setState({ background: `url(${poster_url})` });
-      }).catch(console.error);
+      posterRef.getDownloadURL().then(
+        poster_url => this.setState({ background: `url(${poster_url})` }),
+        error => console.error(error)
+      )
     }
   }
 
-  render() {
-    let props = this.props;
-    return <section className="sighting" key={props.key}>
-      <h3 style={{ background: this.state.background }}>{props.title}</h3>
-      <dl>
-        <dt>Professor</dt>
-        <dd>{props.instructors}</dd>
-        <dt>Class</dt>
-        <dd>{props.course}</dd>
-      </dl>
-      <ReactMarkdown source={props.description.replace(/\\n/g, '\n')} />
-      <dl>
-        <dt>Narrated by</dt>
-        <dd>{props.narrators}</dd>
-        <dt>Others involved</dt>
-        <dd>{props.participants}</dd>
-      </dl>
-    </section>
-  }
+  render = () => <Sighting background={this.state.background} {...this.props} />
 }
+
+const Sighting = (props) =>
+  <section className="sighting" key={props.key}>
+    <h3 style={{ background: props.background }}>{props.title}</h3>
+    <dl>
+      <dt>Professor</dt>
+      <dd>{props.instructors}</dd>
+      <dt>Class</dt>
+      <dd>{props.course}</dd>
+    </dl>
+    <ReactMarkdown source={props.description.replace(/\\n/g, '\n')} />
+    <dl>
+      <dt>Narrated by</dt>
+      <dd>{props.narrators}</dd>
+      <dt>Others involved</dt>
+      <dd>{props.participants}</dd>
+    </dl>
+  </section>
 
 export default App;
