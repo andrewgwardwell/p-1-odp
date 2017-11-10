@@ -13,12 +13,21 @@ firebase.initializeApp(config);
 var db = firebase.firestore();
 
 class App extends Component {
+  render() {
+    return <ODE />
+  }
+}
+
+class ODE extends Component {
   constructor(props) {
     super(props);
-    this.state = { sightings: [] };
+    this.state = { ode: {}, sightings: [] };
   }
 
   componentWillMount() {
+    db.collection('odes').doc('foster-student-autonomy').get().then((doc) => {
+      this.setState({ ode: doc.data() })
+    }).catch(console.error);
     db.collection('sightings').get().then((qs) => {
       let sightings = [];
       qs.forEach((ds) => {
@@ -38,10 +47,9 @@ class App extends Component {
           <div>Design Elements</div>
         </header>
 
-        <h1>Foster Student Autonomy</h1>
+        <h1>{this.state.ode.title}</h1>
         <p className="desc">
-          “Student development of self-directed learning skills is critical for success in today’s rapidly-changing engineering world. The details of how instructors may best foster engagement in life-long learning, however, are unclear; many educators have struggled to define, implement, and assess lifelong learning in engineering curricula.”
-          – JON STOLK
+          {this.state.ode.description}
         </p>
 
         <div>
