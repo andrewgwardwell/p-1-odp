@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import './App.css';
 import logo from './logo.svg';
 import { firebase } from './firebase';
+import "video-react/dist/video-react.css";
+import { Player } from 'video-react';
 
 class App extends Component {
   static childContextTypes = {
@@ -14,8 +16,12 @@ class App extends Component {
   state = { valid: null };
 
   componentWillMount() {
-    let apiURL = process.env.NODE_ENV === 'development' ? 'http://localhost:5000/olin-odes/us-central1' : '';
-    fetch(apiURL + '/valid')
+    let apiURL = '';
+    if (process.env.NODE_ENV === 'development') {
+      // apiURL = 'http://localhost:5000/olin-odes/us-central1';
+      apiURL = 'https://elements.olin.build';
+    }
+    fetch(apiURL + '/client/valid')
       .then(res => res.json())
       .then(
       ({ valid }) => this.setState({ valid }),
@@ -32,7 +38,7 @@ class App extends Component {
   render() {
     const { valid } = this.state;
     if (valid == null) {
-      return "loading…";
+      return "Authorizing…";
     } else if (valid) {
       return <ODEContainer ode-key='foster-student-autonomy' />
     } else {
@@ -102,31 +108,50 @@ class SightingContainer extends Component {
       const { storage } = this.context;
       const posterRef = storage.child(this.props.poster);
       posterRef.getDownloadURL().then(
-        poster_url => this.setState({ background: `url(${poster_url})` }),
+        poster_url => this.setState({ poster_url, background: `url(${poster_url})` }),
         error => console.error(error)
       )
     }
   }
 
-  render = () => <Sighting background={this.state.background} {...this.props} />
+  render = () => <Sighting {...this.state} {...this.props} />
 }
 
-const Sighting = (props) =>
-  <section className="sighting" key={props.key}>
-    <h3 style={{ background: props.background }}>{props.title}</h3>
-    <dl>
-      <dt>Professor</dt>
-      <dd>{props.instructors}</dd>
-      <dt>Class</dt>
-      <dd>{props.course}</dd>
-    </dl>
-    <ReactMarkdown source={props.description.replace(/\\n/g, '\n')} />
-    <dl>
-      <dt>Narrated by</dt>
-      <dd>{props.narrators}</dd>
-      <dt>Others involved</dt>
-      <dd>{props.participants}</dd>
-    </dl>
-  </section>
+class Sighting extends Component {
+  state = {}
+
+  render = () => {
+    const { props, state } = this;
+    return <section className="sighting">
+      {state.playing ? <Player
+        ref={player => {
+          player.subscribeToStateChange(({ paused }) => {
+          });
+        }}
+        playsInline
+        fluid
+        autoPlay
+        preload="metadata"
+        poster={props.poster_url}
+        src={props.movie}
+      /> : <h3 style={{ background: props.background }}
+        onClick={() => props.movie && this.setState({ playing: true })}>
+          {props.title}</h3>}
+      <dl>
+        <dt>Professor</dt>
+        <dd>{props.instructors}</dd>
+        <dt>Class</dt>
+        <dd>{props.course}</dd>
+      </dl>
+      <ReactMarkdown source={props.description.replace(/\\n/g, '\n')} />
+      <dl>
+        <dt>Narrated by</dt>
+        <dd>{props.narrators}</dd>
+        <dt>Others involved</dt>
+        <dd>{props.participants}</dd>
+      </dl>
+    </section>
+  }
+}
 
 export default App;
