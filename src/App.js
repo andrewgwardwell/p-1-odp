@@ -154,7 +154,7 @@ class Sighting extends Component {
         <dt>Class</dt>
         <dd>{props.course}</dd>
       </dl>
-      <ReactMarkdown source={props.description.replace(/\\n/g, '\n')} />
+      <ReactMarkdown className="description" source={props.description.replace(/\\n/g, '\n')} />
       <dl>
         <dt>Narrated by</dt>
         <dd>{props.narrators || props.instructors}</dd>
