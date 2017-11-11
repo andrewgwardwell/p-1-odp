@@ -6,16 +6,16 @@ const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 exports.valid = functions.https.onRequest((req, res) => {
-    cors(req, res, () => {
-        admin.firestore().collection('config').doc('whitelist').get().then(
-            ips => {
-                const { cdirs } = ips.data();
-                const valid = cdirs.some(cdir => cdirContains(cdir, req.ip));
+    admin.firestore().collection('config').doc('whitelist').get().then(
+        ips => {
+            const { cdirs } = ips.data();
+            const valid = cdirs.some(cdir => cdirContains(cdir, req.ip));
+            cors(req, res, () => {
                 res.send({ valid })
-            },
-            error => console.error(error)
-        )
-    })
+            })
+        },
+        error => console.error(error)
+    )
 });
 
 function cdirContains(cdir, ip) {
