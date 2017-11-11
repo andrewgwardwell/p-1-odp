@@ -65,6 +65,14 @@ class ODEContainer extends Component {
       qs.forEach((ds) => {
         const s = ds.data()
         s.key = ds.id;
+        const { movie, poster_url } = s
+        if (movie && !movie.startsWith('http')) {
+          s.movie = 'http://movies.osteele.com/design-elements/' + movie + '.mp4'
+        }
+        if (poster_url && !poster_url.startsWith('http')) {
+          s.poster_url = 'http://images.osteele.com/design-elements/' + poster_url + '-640x360-00001.jpg'
+        }
+        console.info(s.title, s.poster_url)
         sightings.push(s)
       })
       this.setState({ sightings })
@@ -104,9 +112,12 @@ class SightingContainer extends Component {
   state = { background: 'blue' };
 
   componentWillMount() {
-    if (this.props.poster) {
+    const { poster, poster_url } = this.props;
+    if (poster_url) {
+      this.setState({ poster_url, background: `url(${poster_url})` })
+    } else if (poster) {
       const { storage } = this.context;
-      const posterRef = storage.child(this.props.poster);
+      const posterRef = storage.child(poster);
       posterRef.getDownloadURL().then(
         poster_url => this.setState({ poster_url, background: `url(${poster_url})` }),
         error => console.error(error)
@@ -146,7 +157,7 @@ class Sighting extends Component {
       <ReactMarkdown source={props.description.replace(/\\n/g, '\n')} />
       <dl>
         <dt>Narrated by</dt>
-        <dd>{props.narrators}</dd>
+        <dd>{props.narrators || props.instructors}</dd>
         <dt>Others involved</dt>
         <dd>{props.participants}</dd>
       </dl>
