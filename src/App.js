@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import ReactMarkdown from 'react-markdown';
+import { firebase } from './firebase';
+import { Player } from 'video-react';
+import "video-react/dist/video-react.css";
+
 import './App.css';
 import logo from './logo.svg';
-import { firebase } from './firebase';
-import "video-react/dist/video-react.css";
-import { Player } from 'video-react';
+
+const IMAGE_BASE = 'http://images.osteele.com/design-elements/';
+const MOVIE_BASE = 'http://movies.osteele.com/design-elements/';
+const IMAGE_SUFFIX = '-640x360-00001.jpg'
 
 class App extends Component {
   static childContextTypes = {
@@ -56,7 +62,7 @@ class ODEContainer extends Component {
 
   componentWillMount() {
     const db = this.context.firestore;
-    db.collection('odes').doc(this.props['ode-key']).get().then(
+    db.collection('elements').doc(this.props['ode-key']).get().then(
       doc => this.setState({ ode: doc.data() }),
       error => console.error(error)
     );
@@ -67,10 +73,10 @@ class ODEContainer extends Component {
         s.key = ds.id;
         const { movie, poster_url } = s
         if (movie && !movie.startsWith('http')) {
-          s.movie = 'http://movies.osteele.com/design-elements/' + movie + '.mp4'
+          s.movie = MOVIE_BASE + movie.replace(/ /g, '%20') + '.mp4';
         }
         if (poster_url && !poster_url.startsWith('http')) {
-          s.poster_url = 'http://images.osteele.com/design-elements/' + poster_url + '-640x360-00001.jpg'
+          s.poster_url = IMAGE_BASE + poster_url.replace(/ /g, '%20') + IMAGE_SUFFIX;
         }
         console.info(s.title, s.poster_url)
         sightings.push(s)
