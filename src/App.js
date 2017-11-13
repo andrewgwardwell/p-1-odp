@@ -46,58 +46,80 @@ class App extends Component {
     if (valid == null) {
       return "Authorizing…";
     } else if (valid) {
-      return <ODEContainer ode-key='foster-student-autonomy' />
+      return <ElementList />
     } else {
       return "This site can currently be viewed only from within the Olin intranet.";
     }
   }
 }
 
-class ODEContainer extends Component {
+class ElementList extends Component {
+  static contextTypes = {
+    firestore: PropTypes.object
+  };
+  state = { elements: [] };
+  componentWillMount() {
+    const db = this.context.firestore;
+    db.collection('elements').get().then(qs => {
+      const elements = [];
+      qs.forEach(ds => {
+        const el = ds.data();
+        el.key = ds.id;
+        elements.push(el);
+      })
+      this.setState({ elements })
+    },
+      error => console.error(error)
+    );
+  }
+  render = () =>
+    this.state.elements.map(el => <ElementContainer key={el.key} element-key={el.key} />)
+}
+
+class ElementContainer extends Component {
   static contextTypes = {
     firestore: PropTypes.object
   };
 
-  state = { ode: {}, sightings: [] };
+  state = { element: {}, sightings: [] };
 
   componentWillMount() {
     const db = this.context.firestore;
-    db.collection('elements').doc(this.props['ode-key']).get().then(
-      doc => this.setState({ ode: doc.data() }),
+    db.collection('elements').doc(this.props['element-key']).get().then(
+      doc => this.setState({ element: doc.data() }),
       error => console.error(error)
     );
-    db.collection('sightings').get().then((qs) => {
+    db.collection('sightings').get().then(qs => {
       const sightings = [];
-      qs.forEach((ds) => {
-        const s = ds.data()
-        s.key = ds.id;
-        const { movie, poster_url } = s
+      qs.forEach(ds => {
+        const sighting = ds.data()
+        sighting.key = ds.id;
+        const { movie, poster_url } = sighting
         if (movie && !movie.startsWith('http')) {
-          s.movie = MOVIE_BASE + movie.replace(/ /g, '%20') + '.mp4';
+          sighting.movie = MOVIE_BASE + movie.replace(/ /g, '%20') + '.mp4';
         }
         if (poster_url && !poster_url.startsWith('http')) {
-          s.poster_url = IMAGE_BASE + poster_url.replace(/ /g, '%20') + IMAGE_SUFFIX;
+          sighting.poster_url = IMAGE_BASE + poster_url.replace(/ /g, '%20') + IMAGE_SUFFIX;
         }
-        console.info(s.title, s.poster_url)
-        sightings.push(s)
+        sightings.push(sighting)
       })
       this.setState({ sightings })
     }).catch(console.error);
   }
 
-  render = () => <ODE {...this.state } />
+  render = () => <Element {...this.state } />
 }
 
-const ODE = (props) =>
+const Element = (props) =>
   <div>
     <header>
       <img src={logo} alt="logo" />
       <div>Design Elements</div>
     </header>
 
-    <h1>{props.ode.title}</h1>
+    <h1>{props.element.title}</h1>
     <p className="desc">
-      {props.ode.description}
+      {props.element.description}
     </p>
 
     <div>
@@ -105,7 +127,7 @@ const ODE = (props) =>
         <h2>Sightings</h2>
       </header>
       <section className="sightings">
-        {props.sightings.map((s) => <SightingContainer key={s.key} {...s} />)}
+        {props.sightings.map(s => <SightingContainer key={s.key} {...s} />)}
       </section>
     </div>
   </div>
