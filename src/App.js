@@ -85,11 +85,18 @@ class ElementContainer extends Component {
 
   componentWillMount() {
     const db = this.context.firestore;
-    db.collection('elements').doc(this.props['element-key']).get().then(
+    const key = this.props['element-key'];
+    db.collection('elements').doc(key).get().then(
       doc => this.setState({ element: doc.data() }),
       error => console.error(error)
     );
-    db.collection('sightings').get().then(qs => {
+    let q = db.collection('sightings');
+    if (key === 'uncategorized') {
+      q = q.where('uncategorized', '==', true);
+    } else {
+      q = q.where('elements.' + key, '==', true);
+    }
+    q.get().then(qs => {
       const sightings = [];
       qs.forEach(ds => {
         const sighting = ds.data()
