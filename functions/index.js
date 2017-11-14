@@ -10,9 +10,10 @@ exports.valid = functions.https.onRequest((req, res) => {
     admin.firestore().collection('config').doc('whitelist').get().then(
         ips => {
             const { cdirs } = ips.data();
-            const valid = cdirs.some(cdir => cdirContains(cdir, req.ip));
+            const client_ip = req.ip;
+            const valid = cdirs.some(cdir => cdirContains(cdir, client_ip));
             cors(req, res, () => {
-                res.send({ valid })
+                res.send({ valid, client_ip })
             })
         },
         error => console.error(error)

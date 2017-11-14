@@ -30,7 +30,7 @@ class App extends Component {
     fetch(apiURL + '/client/valid')
       .then(res => res.json())
       .then(
-      ({ valid }) => this.setState({ valid }),
+      state => this.setState(state),
       error => console.log('parsing failed', error)
       );
   }
@@ -42,13 +42,16 @@ class App extends Component {
   }
 
   render() {
-    const { valid } = this.state;
+    const { client_ip, valid } = this.state;
     if (valid == null) {
       return "Authorizing…";
     } else if (valid) {
       return <ElementList />
     } else {
-      return "This site can currently be viewed only from within the Olin intranet.";
+      return <div>
+        <p>This site can currently be viewed only from within the Olin intranet.</p>
+        <p>To use it from outside the network, contact the developer to add {client_ip} to the whitelist.</p>
+      </div>;
     }
   }
 }
