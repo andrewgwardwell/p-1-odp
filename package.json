@@ -1,6 +1,7 @@
 {
-  "name": "odes",
+  "name": "olin-design-principles",
   "version": "0.1.0",
+  "repository": "github:osteele/olin-design-principles",
   "private": true,
   "scripts": {
     "build": "gatsby build",
