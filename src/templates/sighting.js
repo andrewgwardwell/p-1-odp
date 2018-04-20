@@ -10,7 +10,7 @@ const SightingTemplate = ({ data, props }) => {
   return (
     <div>
       <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-      <Sighting post={post} html={post.html} frontmatter={post.frontmatter} />
+      <Sighting html={post.html} {...post.frontmatter} />
     </div>
   );
 };
@@ -28,11 +28,14 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        title
+        course
         instructors
+        movie
         narrators
+        participants
         poster_url
         principles
+        title
       }
     }
   }
