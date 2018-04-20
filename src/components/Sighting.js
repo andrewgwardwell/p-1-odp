@@ -1,9 +1,9 @@
 import React from 'react';
 import { Player } from 'video-react';
+import 'video-react/dist/video-react.css';
 
 const Sighting = (props) => {
   const playing = false;
-  console.info(props);
   return (
     <section className="sighting">
       {playing ? (

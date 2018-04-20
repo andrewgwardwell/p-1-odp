@@ -5,7 +5,7 @@ import Sighting from '../components/Sighting';
 
 const SightingTemplate = ({ data, props }) => {
   const post = data.markdownRemark;
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
+  const siteTitle = get(props, 'site.siteMetadata.title');
 
   return (
     <div>

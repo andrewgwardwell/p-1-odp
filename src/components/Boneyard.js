@@ -55,32 +55,6 @@ class App extends Component {
   }
 }
 
-class ElementList extends Component {
-  static contextTypes = {
-    firestore: PropTypes.object,
-  };
-  state = { elements: [] };
-  componentWillMount() {
-    const db = this.context.firestore;
-    db
-      .collection('elements')
-      .get()
-      .then(
-        qs => {
-          const elements = [];
-          qs.forEach(ds => {
-            const el = ds.data();
-            el.key = ds.id;
-            elements.push(el);
-          });
-          this.setState({ elements });
-        },
-        error => console.error(error),
-      );
-  }
-  render = () => this.state.elements.map(el => <ElementContainer key={el.key} element-key={el.key} />);
-}
-
 class ElementContainer extends Component {
   static contextTypes = {
     firestore: PropTypes.object,
@@ -125,24 +99,3 @@ class ElementContainer extends Component {
 
   render = () => <Element {...this.state} />;
 }
-
-const Element = props => (
-  <div>
-    <header>
-      <img src={logo} alt="logo" />
-      <div>Design Elements</div>
-    </header>
-
-    <h1>{props.element.title}</h1>
-    <p className="desc">{props.element.description}</p>
-
-    <div>
-      <header className="sightings">
-        <h2>Sightings</h2>
-      </header>
-      <section className="sightings">{props.sightings.map(s => <SightingContainer key={s.key} {...s} />)}</section>
-    </div>
-  </div>
-);
-
-export default App;

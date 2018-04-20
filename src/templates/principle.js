@@ -2,18 +2,18 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import get from 'lodash/get';
+import Principle from '../components/Principle';
 
 const PrincipleTemplate = ({ data, props }) => {
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
+  const siteTitle = get(props, 'site.siteMetadata.title');
   const post = data.markdownRemark;
   const sightings = data.allMarkdownRemark.edges.map(({ node }) => node);
-  console.info('data', sightings);
 
   return (
     <div>
       <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
-      <h1>Design Principle: {post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <Principle description={post.html} sightings={sightings} {...post.frontmatter} />
+      <hr />
       <h2>Sightings</h2>
       <ul>
         {sightings.map(({ id, frontmatter: fm }) => (
@@ -49,7 +49,13 @@ export const pageQuery = graphql`
           id
           html
           frontmatter {
+            course
+            instructors
+            movie
+            narrators
+            participants
             path
+            poster_url
             title
           }
         }
