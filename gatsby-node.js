@@ -28,7 +28,7 @@ exports.createPages = async ({ boundActionCreators, graphql }) => {
     const { path } = node.frontmatter;
     const relativePath = node.fileAbsolutePath.slice(baseAbsolutePath.length);
     const collection = getPathCollection(relativePath);
-    const component = collectionTemplates[collection] || collectionTemplates['default'];
+    const component = collectionTemplates[collection] || collectionTemplates.default;
     createPage({ path, component, context: {} });
   });
 

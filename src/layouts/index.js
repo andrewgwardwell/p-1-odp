@@ -6,15 +6,18 @@ import React from 'react';
 import config from '../../gatsby-config';
 
 const TemplateWrapper = ({ children }) => (
-  <div className="sans-serif">
-    <Helmet>
-      <title>{`${config.siteMetadata.title}`}</title>
-      <meta name="description" content={config.siteMetadata.description} />
-    </Helmet>
-    <main className="page-content">
-      <div className="wrapper lh-copy">{children()}</div>
-    </main>
-  </div>
+    <div className="sans-serif">
+        <Helmet>
+            <title>{`${config.siteMetadata.title}`}</title>
+            <meta
+                name="description"
+                content={config.siteMetadata.description}
+            />
+        </Helmet>
+        <main className="page-content">
+            <div className="wrapper lh-copy">{children()}</div>
+        </main>
+    </div>
 );
 
 TemplateWrapper.propTypes = {

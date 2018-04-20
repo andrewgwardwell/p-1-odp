@@ -8,41 +8,43 @@ const IndexPage = ({ data }) => {
   const principles = data.allMarkdownRemark.edges.map(({ node }) => node);
 
   return (
-    <div>
-      <Helmet title={siteTitle} />
-      <h1>Design Principles</h1>
-      <ul>
-        {principles.map(({ id, frontmatter: fm }) => (
-          <li key={id}>
-            <Link to={fm.path}>{fm.name}</Link>
-          </li>
-        ))}
-      </ul>
-      <hr />
-    </div>
+        <div>
+            <Helmet title={siteTitle} />
+            <h1>Design Principles</h1>
+            <ul>
+                {principles.map(({ id, frontmatter: fm }) => (
+                    <li key={id}>
+                        <Link to={fm.path}>{fm.name}</Link>
+                    </li>
+                ))}
+            </ul>
+            <hr />
+        </div>
   );
 };
 
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query indexPageQuery {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(filter: { fields: { collection: { eq: "principles" } } }) {
-      edges {
-        node {
-          id
-          html
-          frontmatter {
-            path
-            name
-          }
+    query indexPageQuery {
+        site {
+            siteMetadata {
+                title
+            }
         }
-      }
+        allMarkdownRemark(
+            filter: { fields: { collection: { eq: "principles" } } }
+        ) {
+            edges {
+                node {
+                    id
+                    html
+                    frontmatter {
+                        path
+                        name
+                    }
+                }
+            }
+        }
     }
-  }
 `;
