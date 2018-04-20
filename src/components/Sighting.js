@@ -1,206 +1,48 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
-import ReactMarkdown from 'react-markdown';
-import { firebase } from './firebase';
+import React from 'react';
 import { Player } from 'video-react';
-import "video-react/dist/video-react.css";
 
-import './App.css';
-import logo from './logo.svg';
+const Sighting = ({ post }) => {
+  const props = post.frontmatter;
+  const playing = false;
+  return (
+        <section className="sighting">
+            {playing ? (
+                <Player
+                    ref={(player) => {
+                        player.subscribeToStateChange(({ _paused }) => {});
+                    }}
+                    playsInline
+                    fluid
+                    autoPlay
+                    preload="metadata"
+                    poster={props.poster_url}
+                    src={props.movie}
+                />
+            ) : (
+                <h3
+                    style={{ background: props.background }}
+                    onClick={() =>
+                        props.movie && this.setState({ playing: true })
+                    }
+                >
+                    {props.title}
+                </h3>
+            )}
+            <dl>
+                <dt>Professor</dt>
+                <dd>{props.instructors}</dd>
+                <dt>Class</dt>
+                <dd>{props.course}</dd>
+            </dl>
+            <div dangerouslySetInnerHTML={{ __html: post.html }} />
+            <dl>
+                <dt>Narrated by</dt>
+                <dd>{props.narrators || props.instructors}</dd>
+                <dt>Others involved</dt>
+                <dd>{props.participants}</dd>
+            </dl>
+        </section>
+  );
+};
 
-const IMAGE_BASE = 'http://images.osteele.com/design-elements/';
-const MOVIE_BASE = 'http://movies.osteele.com/design-elements/';
-const IMAGE_SUFFIX = '-640x360-00001.jpg'
-
-class App extends Component {
-  static childContextTypes = {
-    firestore: PropTypes.object,
-    storage: PropTypes.object,
-  };
-
-  state = { valid: null };
-
-  componentWillMount() {
-    let apiURL = '';
-    if (process.env.NODE_ENV === 'development') {
-      // apiURL = 'http://localhost:5000/olin-odes/us-central1';
-      apiURL = 'https://elements.olin.build';
-    }
-    fetch(apiURL + '/client/valid')
-      .then(res => res.json())
-      .then(
-      state => this.setState(state),
-      error => console.log('parsing failed', error)
-      );
-  }
-
-  getChildContext() {
-    const firestore = firebase.firestore()
-    const storageRef = firebase.storage().ref();
-    return { firestore, storage: storageRef };
-  }
-
-  render() {
-    const { client_ip, valid } = this.state;
-    if (valid == null) {
-      return "Authorizing…";
-    } else if (valid) {
-      return <ElementList />
-    } else {
-      return <div>
-        <p>This site can currently be viewed only from within the Olin intranet.</p>
-        <p>To use it from outside the network, contact the developer to add {client_ip} to the whitelist.</p>
-      </div>;
-    }
-  }
-}
-
-class ElementList extends Component {
-  static contextTypes = {
-    firestore: PropTypes.object
-  };
-  state = { elements: [] };
-  componentWillMount() {
-    const db = this.context.firestore;
-    db.collection('elements').get().then(qs => {
-      const elements = [];
-      qs.forEach(ds => {
-        const el = ds.data();
-        el.key = ds.id;
-        elements.push(el);
-      })
-      this.setState({ elements })
-    },
-      error => console.error(error)
-    );
-  }
-  render = () =>
-    this.state.elements.map(el => <ElementContainer key={el.key} element-key={el.key} />)
-}
-
-class ElementContainer extends Component {
-  static contextTypes = {
-    firestore: PropTypes.object
-  };
-
-  state = { element: {}, sightings: [] };
-
-  componentWillMount() {
-    const db = this.context.firestore;
-    const key = this.props['element-key'];
-    db.collection('elements').doc(key).get().then(
-      doc => this.setState({ element: doc.data() }),
-      error => console.error(error)
-    );
-    let q = db.collection('sightings');
-    if (key === 'uncategorized') {
-      q = q.where('uncategorized', '==', true);
-    } else {
-      q = q.where('elements.' + key, '==', true);
-    }
-    q.get().then(qs => {
-      const sightings = [];
-      qs.forEach(ds => {
-        const sighting = ds.data()
-        sighting.key = ds.id;
-        const { movie, poster_url } = sighting
-        if (movie && !movie.startsWith('http')) {
-          sighting.movie = MOVIE_BASE + movie.replace(/ /g, '%20') + '.mp4';
-        }
-        if (poster_url && !poster_url.startsWith('http')) {
-          sighting.poster_url = IMAGE_BASE + poster_url.replace(/ /g, '%20') + IMAGE_SUFFIX;
-        }
-        sightings.push(sighting)
-      })
-      this.setState({ sightings })
-    }).catch(console.error);
-  }
-
-  render = () => <Element {...this.state } />
-}
-
-const Element = (props) =>
-  <div>
-    <header>
-      <img src={logo} alt="logo" />
-      <div>Design Elements</div>
-    </header>
-
-    <h1>{props.element.title}</h1>
-    <p className="desc">
-      {props.element.description}
-    </p>
-
-    <div>
-      <header className="sightings">
-        <h2>Sightings</h2>
-      </header>
-      <section className="sightings">
-        {props.sightings.map(s => <SightingContainer key={s.key} {...s} />)}
-      </section>
-    </div>
-  </div>
-
-class SightingContainer extends Component {
-  static contextTypes = {
-    storage: PropTypes.object
-  };
-
-  state = { background: 'blue' };
-
-  componentWillMount() {
-    const { poster, poster_url } = this.props;
-    if (poster_url) {
-      this.setState({ poster_url, background: `url(${poster_url})` })
-    } else if (poster) {
-      const { storage } = this.context;
-      const posterRef = storage.child(poster);
-      posterRef.getDownloadURL().then(
-        poster_url => this.setState({ poster_url, background: `url(${poster_url})` }),
-        error => console.error(error)
-      )
-    }
-  }
-
-  render = () => <Sighting {...this.state} {...this.props} />
-}
-
-class Sighting extends Component {
-  state = {}
-
-  render = () => {
-    const { props, state } = this;
-    return <section className="sighting">
-      {state.playing ? <Player
-        ref={player => {
-          player.subscribeToStateChange(({ paused }) => {
-          });
-        }}
-        playsInline
-        fluid
-        autoPlay
-        preload="metadata"
-        poster={props.poster_url}
-        src={props.movie}
-      /> : <h3 style={{ background: props.background }}
-        onClick={() => props.movie && this.setState({ playing: true })}>
-          {props.title}</h3>}
-      <dl>
-        <dt>Professor</dt>
-        <dd>{props.instructors}</dd>
-        <dt>Class</dt>
-        <dd>{props.course}</dd>
-      </dl>
-      <ReactMarkdown className="description" source={props.description.replace(/\\n/g, '\n')} />
-      <dl>
-        <dt>Narrated by</dt>
-        <dd>{props.narrators || props.instructors}</dd>
-        <dt>Others involved</dt>
-        <dd>{props.participants}</dd>
-      </dl>
-    </section>
-  }
-}
-
-export default App;
+export default Sighting;
