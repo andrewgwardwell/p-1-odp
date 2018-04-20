@@ -3,8 +3,8 @@ import Helmet from 'react-helmet';
 import Link from 'gatsby-link';
 import get from 'lodash/get';
 
-const IndexPage = ({ data, props }) => {
-  const siteTitle = get(props, 'data.site.siteMetadata.title');
+const IndexPage = ({ data }) => {
+  const siteTitle = get(data, 'site.siteMetadata.title');
   const principles = data.allMarkdownRemark.edges.map(({ node }) => node);
 
   return (
