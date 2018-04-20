@@ -1,9 +1,13 @@
 body {
     width: 11in;
     margin: 60px auto 10px;
-    font: Didot, Helvetica; // margin: 0;
-    // padding: 0;
-    // font-family: sans-serif;
+    font: Didot, Helvetica;
+}
+
+body.unused {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
 }
 
 header div {
@@ -26,9 +30,6 @@ p.desc {
 header.sightings {
     background: #245A6E;
     color: white;
-}
-
-header.sightings {
     background: #1C4352;
     height: 80px;
     padding-left: 57px;
@@ -39,15 +40,15 @@ header.sightings {
 
 .sightings {
     color: white;
-}
-
-.sightings h2 img {
-    padding-right: 10px;
-}
-
-.sightings h2::before {
-    content: url(sightings.svg);
-    padding-right: 15px;
+    h2 {
+        img {
+            padding-right: 10px;
+        }
+        &::before {
+            content: url(sightings.svg);
+            padding-right: 15px;
+        }
+    }
 }
 
 section.sightings {
@@ -63,43 +64,38 @@ section.sightings {
     padding-right: 50px;
     font-size: 9.75pt;
     line-height: 11.7pt;
-}
-
-.sighting h3 {
-    font-size: 30pt;
-    line-height: 32.25pt;
-    width: 320px;
-    height: 183px;
-    padding-left: 30px;
-    padding-top: 24px;
-}
-
-.sighting dt,
-.sighting dd {
-    display: inline;
-    margin: 0;
-    font-weight: bold;
-    line-height: 12pt;
-}
-
-.sighting dt {
-    text-transform: uppercase;
-}
-
-.sighting dt::after {
-    content: ': ';
-}
-
-.sighting dd::after {
-    content: "\a";
-    white-space: pre;
-}
-
-.sighting .description ul,
-.sighting .description ol {
-    margin-left: 0px;
-}
-
-.sighting .description ol {
-    padding-left: 17px;
+    h3 {
+        font-size: 30pt;
+        line-height: 32.25pt;
+        width: 320px;
+        height: 183px;
+        padding-left: 30px;
+        padding-top: 24px;
+    }
+    dt,
+    dd {
+        display: inline;
+        margin: 0;
+        font-weight: bold;
+        line-height: 12pt;
+    }
+    dt {
+        text-transform: uppercase;
+        &::after {
+            content: ': ';
+        }
+    }
+    dd::after {
+        content: "\a";
+        white-space: pre;
+    }
+    .description {
+        ul {
+            margin-left: 0px;
+        }
+        ol {
+            margin-left: 0px;
+            padding-left: 17px;
+        }
+    }
 }
