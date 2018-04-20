@@ -4,8 +4,8 @@ import Link from 'gatsby-link';
 import get from 'lodash/get';
 import Principle from '../components/Principle';
 
-const PrincipleTemplate = ({ data, props }) => {
-  const siteTitle = get(props, 'site.siteMetadata.title');
+const PrincipleTemplate = ({ data }) => {
+  const siteTitle = get(data, 'site.siteMetadata.title');
   const post = data.markdownRemark;
   const sightings = data.allMarkdownRemark.edges.map(({ node }) => node);
 

@@ -3,9 +3,9 @@ import Helmet from 'react-helmet';
 import get from 'lodash/get';
 import Sighting from '../components/Sighting';
 
-const SightingTemplate = ({ data, props }) => {
+const SightingTemplate = ({ data }) => {
+  const siteTitle = get(data, 'site.siteMetadata.title');
   const post = data.markdownRemark;
-  const siteTitle = get(props, 'site.siteMetadata.title');
 
   return (
     <div>
