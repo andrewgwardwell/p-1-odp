@@ -9,10 +9,10 @@ const IMAGE_SUFFIX = '-640x360-00001.jpg';
 const Sighting = (props) => {
   const playing = true;
   let { movie, poster_url: posterUrl } = props;
-  if (movie && !movie.startsWith('http')) {
+  if (movie && !movie.match(/^https?:/)) {
     movie = `${MOVIE_BASE}/${encodeURI(movie)}.mp4`;
   }
-  if (posterUrl && !posterUrl.startsWith('http')) {
+  if (posterUrl && !posterUrl.match(/^https?:/)) {
     posterUrl = `${IMAGE_BASE}/${encodeURI(posterUrl)}${IMAGE_SUFFIX}`;
   }
   return (
