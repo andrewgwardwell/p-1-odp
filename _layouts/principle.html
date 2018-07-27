@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div>
+  <header>
+    <img src="/static/img/principle.svg" alt="logo" />
+    <div>Design Principle</div>
+  </header>
+
+  <h1>{{ page.title }}</h1>
+  <div class="desc">
+    {{ content }}
+  </div>
+  <div>
+    <header class="sightings">
+      <h2>Sightings</h2>
+    </header>
+    <section class="sightings">
+      <ul>
+        {% for sighting in site.sightings %}
+          <li><a href="{{ sighting.url }}">{{ sighting.title}}</a></li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>
+

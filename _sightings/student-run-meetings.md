@@ -4,8 +4,7 @@ instructors: Tim Ferguson Sauder
 movie: http://movies.osteele.com/design-elements/StudentMeetingTest02.mp4
 narrators: Tim Ferguson Sauder
 participants: Annabel Consilvio, Kristen O’Neil
-path: /sightings/student-run-meetings
-poster: thumbnail.png
+poster: StudentMeetingTest02
 principles:
 - foster student autonomy
 title: Student-Run Meetings

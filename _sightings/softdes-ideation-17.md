@@ -3,8 +3,7 @@ course: Software Design
 instructors: Oliver Steele
 movie: SoftDes Ideation v1
 participants: Hannah Twigg-Smith
-path: /sightings/softdes-ideation-17
-poster_url: SoftDes Ideation v1
+poster: SoftDes Ideation v1
 title: SoftDes Ideation
 uncategorized: true
 ---

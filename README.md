@@ -2,9 +2,10 @@
 
 ## Install
 
-* Install `node` and `yarn`.
-* `yarn install`
+* Install Ruby.
+* Install bundler: `gem install bundler`
+* `bundle install`
 
-## Run
+## Develop
 
-`yarn start`
+`bundle exec jekyll serve`

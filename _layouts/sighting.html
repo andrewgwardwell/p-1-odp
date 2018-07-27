@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+{% assign poster_url = page.poster | prepend: site.poster_url_prefix | append: site.image_suffix %}
+
+
+<section class="sighting">
+  <h3 style="background: url({{ poster_url }})">
+    {{ page.title }}<br/>
+  </h3>
+  <dl>
+    <dt>Professor</dt>
+    <dd>{{ page.instructors }}</dd>
+    <dt>Class</dt>
+    <dd>{{ page.course }}</dd>
+  </dl>
+  <div>
+    {{ content }}
+  </div>
+  <dl>
+    <dt>Narrated by</dt>
+    <dd>{{ page.narrators | default: page.instructors }}</dd>
+    <dt>Others involved</dt>
+    <dd>{{ page.participants }}</dd>
+  </dl>
+</section>

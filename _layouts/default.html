@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% if page.title %}{{ page.title }}{{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+
+    <link rel="stylesheet" href="{{ "/static/css/site.css" | prepend: site.baseurl }}">
+  </head>
+  <body>
+    <div class="sans-serif>
+      <main class="page-content">
+        <div class="wrapper lh-copy">
+          {{ content }}
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

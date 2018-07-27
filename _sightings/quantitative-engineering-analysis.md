@@ -4,8 +4,7 @@ instructors: Alexandra Strong, John Geddes, Paul Ruvolo, & Siddhartan Govindasam
 movie: QEA_Idea_Generation_v2
 narrator: Alexandra Strong
 participants: QEA Cohort 2017
-path: /sightings/quantitative-engineering-analysis
-poster_url: QEA_Idea_Generation_v2
+poster: QEA_Idea_Generation_v2
 principles:
 - foster student autonomy
 - scaffold project scoping

@@ -1,43 +1,40 @@
+---
+---
+
 body {
     width: 11in;
     margin: 60px auto 10px;
     font: Didot, Helvetica;
 }
-
 body.unused {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
-
 header div {
     text-transform: uppercase;
     float: right;
     font-size: 12pt;
 }
-
 h1 {
     font-size: 33pt;
 }
-
 p.desc {
     font-size: 16.5pt;
-    color: #245A6E;
+    color: #245a6e;
     line-height: 19.8pt;
     width: 8.882in;
 }
-
 header.sightings {
-    background: #245A6E;
+    background: #245a6e;
     color: white;
-    background: #1C4352;
+    background: #1c4352;
     height: 80px;
     padding-left: 57px;
     display: flex;
     align-items: center;
     font-size: 16.5pt;
 }
-
 .sightings {
     color: white;
     h2 {
@@ -50,14 +47,12 @@ header.sightings {
         }
     }
 }
-
 section.sightings {
     display: flex;
     flex-wrap: wrap;
     background: #306e80;
     margin-bottom: 90px;
 }
-
 .sighting {
     width: 320px;
     padding-left: 57px;
@@ -86,7 +81,7 @@ section.sightings {
         }
     }
     dd::after {
-        content: "\a";
+        content: '\a';
         white-space: pre;
     }
     .description {

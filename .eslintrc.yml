@@ -1,36 +1,6 @@
 root: true
 extends:
   - airbnb-base
-  - plugin:react/recommended
 
 env:
   browser: true
-
-plugins:
-  - react
-
-globals:
-  graphql: false
-
-rules:
-  # lists false positives for react and other packages that gatsby and its
-  # plugins transitively include
-  import/no-extraneous-dependencies: off
-  # useful and harmless in this particular project
-  no-console: off
-  # stylistic preferences
-  max-len: [error, {code: 120}]
-  no-confusing-arrow: off
-  no-nested-ternary: off
-  no-unused-vars:  [error, { argsIgnorePattern: "^_" }]
-  no-use-before-define: off
-  react/prop-types: off
-
-overrides:
-  - files: gatsby-node.js
-    rules:
-      consistent-return: off  # inherited from starter
-      no-shadow: off  # FIXME remove this
-  - files: src/layouts/index.js
-    rules:
-      import/first: off  # doesn't make sense for css reset

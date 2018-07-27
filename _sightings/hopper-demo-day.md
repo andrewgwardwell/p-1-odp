@@ -3,8 +3,7 @@ instructors: Tim Ferguson Sauder
 movie: http://movies.osteele.com/design-elements/HopperTest01.mp4
 narrators: Mike Smith
 participants: Jenny Wilson, Sarah West, Bill Donby, Jared thin
-path: /sightings/hopper-demo-day
-poster: HopperTest01.jpg
+poster: HopperTest01
 principles:
 - celebrate student learning
 - learn from failure

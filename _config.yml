@@ -1,0 +1,41 @@
+timezone: America/New_York
+
+poster_url_prefix: http://images.osteele.com/design-elements/
+movie_base: http://movies.osteele.com/design-elements/
+image_suffix: '-640x360-00001.jpg'
+
+collections:
+  pages:
+    output: true
+    permalink: /:path
+  principles:
+    title: Principles
+    output: true
+  sightings:
+    title: Sightings
+    output: true
+
+defaults:
+  - scope:
+      path: ''
+      type: pages
+    values:
+       layout: default
+  - scope:
+      path: ''
+      type: principles
+    values:
+       layout: principle
+  - scope:
+      path: ''
+      type: sightings
+    values:
+       layout: sighting
+
+exclude:
+  - Gemfile
+  - Gemfile.lcok
+  - README.md
+  - lambda
+  - scripts
+  - TODO*
