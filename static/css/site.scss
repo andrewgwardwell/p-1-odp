@@ -23,6 +23,10 @@ header {
                 content: '|';
                 padding: 10px;
             }
+            li a {
+                color: inherit;
+                text-decoration: none;
+            }
         }
     }
 }
