@@ -185,7 +185,7 @@ body.sighting {
         margin: 20px;
         background: #ececeb;
         display: grid;
-        grid-template-columns: 550px 200px;
+        grid-template-columns: 640px 200px;
         grid-column-gap: 20px;
         .principle {
             text-transform: uppercase;
@@ -197,7 +197,7 @@ body.sighting {
             }
         }
         img {
-            width: 520px;
+            width: 640px;
         }
         .summary {
             font-weight: bold;
