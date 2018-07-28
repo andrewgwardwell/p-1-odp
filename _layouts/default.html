@@ -10,13 +10,8 @@
 
     <link rel="stylesheet" href="{{ "/static/css/site.css" | prepend: site.baseurl }}">
   </head>
-  <body>
-    <div class="sans-serif>
-      <main class="page-content">
-        <div class="wrapper lh-copy">
-          {{ content }}
-        </div>
-      </main>
-    </div>
+
+  <body class="{{ page.body-class }}">
+    {{ content }}
   </body>
 </html>

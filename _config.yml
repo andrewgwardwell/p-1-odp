@@ -1,6 +1,7 @@
 timezone: America/New_York
 
 poster_url_prefix: http://images.osteele.com/design-elements/
+media_base_url: https://olin-design-principles.s3.amazonaws.com/
 movie_base: http://movies.osteele.com/design-elements/
 image_suffix: '-640x360-00001.jpg'
 
@@ -25,12 +26,13 @@ defaults:
       path: ''
       type: principles
     values:
-       layout: principle
+      layout: principle
   - scope:
       path: ''
       type: sightings
     values:
-       layout: sighting
+      body-class: sighting
+      layout: sighting
 
 exclude:
   - Gemfile

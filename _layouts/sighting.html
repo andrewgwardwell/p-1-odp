@@ -2,26 +2,38 @@
 layout: default
 ---
 
-{% assign poster_url = page.poster | prepend: site.poster_url_prefix | append: site.image_suffix %}
+{% assign poster_url = page.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' %}
 
+<header>
+  <div class="logo">
+    <div class="box">Odp</div>
+    <div class="title">Olin Design Principles</div>
+  </div>
+
+  <nav>
+    <ul>
+      <li>About the Collaboratory</li>
+      <li>The Principles</li>
+      <li>Contact us</li>
+    </ul>
+  </nav>
+</header>
 
 <section class="sighting">
-  <h3 style="background: url({{ poster_url }})">
-    {{ page.title }}<br/>
-  </h3>
-  <dl>
-    <dt>Professor</dt>
-    <dd>{{ page.instructors }}</dd>
-    <dt>Class</dt>
-    <dd>{{ page.course }}</dd>
-  </dl>
-  <div>
+  <div class="content">
+    <div>{{ page.principle }}</div>
+    <img src="{{ poster_url }}">
+    <h1>{{ page.title }}</h1>
+    <div class="summary">{{ page.summary }}</div>
     {{ content }}
   </div>
-  <dl>
-    <dt>Narrated by</dt>
-    <dd>{{ page.narrators | default: page.instructors }}</dd>
-    <dt>Others involved</dt>
-    <dd>{{ page.participants }}</dd>
+
+  <dl class="meta">
+    <dt>Principle</dt>
+    <dd>{{ page.principle }}</dd>
+    <dt>Teaching Team</dt>
+    <dd>{{ page.teaching-team }}</dd>
+    <dt>Class</dt>
+    <dd>{{ page.course-number }} {{ page.course-title }}</dd>
   </dl>
 </section>
