@@ -179,6 +179,14 @@ body.principles .content {
         }
     }
 }
+body {
+    .content {
+        padding: 20px;
+        h1 {
+            text-transform: uppercase;
+        }
+    }
+}
 body.sighting {
     main.sighting {
         margin: 20px;
@@ -188,7 +196,9 @@ body.sighting {
             max-height: 360px;
         }
         .principle {
+            color: inherit;
             text-transform: uppercase;
+            text-decoration: none;
         }
         h1 {
             text-transform: uppercase;

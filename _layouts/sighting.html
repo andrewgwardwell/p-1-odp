@@ -7,7 +7,7 @@ layout: default
 
 <main class="sighting">
   <div class="content">
-    <div class="principle">{{ page.principle }}</div>
+    <a class="principle" href="/principles/{{ page.principle | slugify }}">{{ page.principle }}</a>
     <video controls
        src="{{ movie_url }}"
        poster="{{ poster_url }}"
