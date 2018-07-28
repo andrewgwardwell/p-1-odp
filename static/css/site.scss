@@ -229,12 +229,22 @@ body.sighting {
             }
         }
     }
-    .related-content h2 {
-        margin-left: 15px;
-        font-size: 10pt;
-        text-transform: uppercase;
-        &::after {
-            content: ':';
+    .related-content {
+        h2 {
+            margin-left: 15px;
+            font-size: 10pt;
+            text-transform: uppercase;
+            &::after {
+                content: ':';
+            }
+        }
+        &.same-principle .principle-button,
+        &.same-course .course-button {
+            text-decoration: underline;
+        }
+        &.same-principle .different-principle,
+        &.same-course .different-course {
+            display: none;
         }
     }
 }
