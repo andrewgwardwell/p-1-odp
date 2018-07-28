@@ -168,6 +168,8 @@ body.principles .content {
         column-gap: 150px;
         margin-top: 50px;
         .principle {
+            color: inherit;
+            text-decoration: none;
             break-inside: avoid-column;
             h2 {
                 text-transform: uppercase;
@@ -223,6 +225,9 @@ body.sighting {
                 margin-left: 0;
                 text-decoration: underline;
                 margin-bottom: 15px;
+                a {
+                    color: inherit;
+                }
             }
         }
     }
