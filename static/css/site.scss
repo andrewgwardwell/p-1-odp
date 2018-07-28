@@ -30,6 +30,34 @@ header {
         }
     }
 }
+header.default {
+    background: #234173;
+    box-shadow: 0 0 18px #234173;
+    color: white;
+    height: 40px;
+    padding-top: 5px;
+    .logo {
+        .box {
+            border: 1px solid white;
+            width: 18px;
+            padding: 5px;
+            font-size: 12px;
+        }
+        .box,
+        .title {
+            float: left;
+        }
+        .title {
+            text-transform: uppercase;
+            width: 80px;
+            padding-left: 10px;
+            font-size: 12px;
+        }
+    }
+    nav {
+        font-size: 12px;
+    }
+}
 .sightings.grid {
     display: grid;
     grid-template-columns: repeat(3, 350px);
@@ -124,35 +152,34 @@ body.home {
         margin-top: 100px;
     }
 }
-body.sighting {
-    header {
-        background: #234173;
-        box-shadow: 0 0 18px #234173;
-        color: white;
-        height: 40px;
-        padding-top: 5px;
-        .logo {
-            .box {
-                border: 1px solid white;
-                width: 18px;
-                padding: 5px;
-                font-size: 12px;
-            }
-            .box,
-            .title {
-                float: left;
-            }
-            .title {
+body.principles .content {
+    margin: 25px;
+    padding: 5px 25px;
+    background: #ececeb;
+    h1 {
+        position: relative;
+        font-size: 12pt;
+        left: -20px;
+        text-transform: uppercase;
+    }
+    .principles {
+        columns: 2 auto;
+        column-gap: 150px;
+        margin-top: 50px;
+        .principle {
+            break-inside: avoid-column;
+            h2 {
                 text-transform: uppercase;
-                width: 80px;
-                padding-left: 10px;
-                font-size: 12px;
+                font-size: 16pt;
+                margin-bottom: 0;
             }
-        }
-        nav {
-            font-size: 12px;
+            .description {
+                font-size: 12pt;
+            }
         }
     }
+}
+body.sighting {
     main.sighting {
         margin: 20px;
         background: #ececeb;

@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{{ content }}
+
+<div class="principles">
+  {% for principle in site.principles %}
+    <div class="principle">
+      <h2>{{ principle.title }}</h2>
+      <div class="description">{{ principle.content }}</div>
+    </div>
+  {% endfor %}
+</div>
