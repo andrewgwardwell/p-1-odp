@@ -2,4 +2,4 @@
 title: Learn from Failure
 ---
 
-“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse.” - JAN SMITH
+In hac habitasse platea dictumst. Duis eleifend eget lectus varius aliquet. Aenean vitae pharetra nunc. Morbi aliquet eu urna sed scelerisque. Pellentesque suscipit, sapien ut sagittis posuere, justo erat eleifend ligula, sit amet tempus felis turpis euismod dolor. Integer pretium feugiat eleifend. Cras cursus diam ut aliquet lacinia. Donec ac lectus maximus, maximus arcu quis, aliquam nulla.

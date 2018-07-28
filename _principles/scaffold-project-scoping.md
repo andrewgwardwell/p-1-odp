@@ -1,3 +1,0 @@
----
-title: Scaffold Project Scoping
----
