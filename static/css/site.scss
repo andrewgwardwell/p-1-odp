@@ -8,10 +8,11 @@ header {
     width: 100%;
     padding: 15px;
     nav {
-        text-transform: uppercase;
         position: absolute;
         top: 10px;
-        right: 20px;
+        right: 30px;
+        font-size: 12px;
+        text-transform: uppercase;
         ul {
             list-style-type: none;
             margin: 0;
@@ -30,56 +31,53 @@ header {
             }
         }
     }
-    nav {
-        font-size: 12px;
-    }
 }
 header.default {
+    height: 40px;
+    padding-top: 5px;
     background: #234173;
     box-shadow: 0 0 18px #234173;
     color: white;
-    height: 40px;
-    padding-top: 5px;
     .logo {
         color: white;
         .box {
-            border: 1px solid white;
             width: 18px;
             padding: 5px;
             font-size: 12px;
+            border: 1px solid white;
         }
         .box,
         .title {
             float: left;
         }
         .title {
-            text-transform: uppercase;
             width: 80px;
             padding-left: 10px;
             font-size: 12px;
+            text-transform: uppercase;
         }
     }
 }
 .sightings.grid {
     display: grid;
+    padding: 10px;
     grid-template-columns: repeat(auto-fill, 350px);
     grid-row-gap: 20px;
     grid-column-gap: 10px;
-    padding: 10px;
 }
 .sighting.card {
     display: block;
-    background: #ececeb;
-    color: black;
     padding: 10px;
     text-decoration: none;
+    background: #ececeb;
+    color: black;
     .principle {
-        text-transform: uppercase;
         font-size: 10px;
+        text-transform: uppercase;
     }
     h1 {
-        text-transform: uppercase;
         font-size: 18px;
+        text-transform: uppercase;
         &::after {
             content: '!';
         }
@@ -98,23 +96,23 @@ header.default {
     }
     .poster {
         position: relative;
-        background: green;
-        color: lightgreen;
         height: 200px;
         padding: 15px;
+        background: green;
+        color: lightgreen;
     }
 }
 body.home {
     header {
         position: relative;
-        background: #2c2c2b;
         min-height: 150px;
+        background: #2c2c2b;
         color: white;
         box-shadow: 0 0 18px #2c2c2b;
         .logo {
-            border: 5px solid white;
             width: 120px;
             padding: 5px;
+            border: 5px solid white;
             .year {
                 font-size: 10px;
             }
@@ -130,18 +128,18 @@ body.home {
             }
         }
         .description {
-            width: 450px;
-            text-transform: uppercase;
+            max-width: 450px;
             margin-top: 80px;
             font-size: 14px;
+            text-transform: uppercase;
         }
         .banner {
             position: absolute;
-            padding: 20px;
-            padding-top: 120px;
+            top: 80px;
             width: 450px;
             right: 20px;
-            top: 80px;
+            padding: 20px;
+            padding-top: 120px;
             background: black;
             color: white;
             font-size: 30px;
@@ -160,22 +158,20 @@ body.principles .content {
     background: #ececeb;
     h1 {
         position: relative;
-        font-size: 12pt;
         left: -20px;
+        font-size: 12pt;
         text-transform: uppercase;
     }
     .principles {
-        columns: 2 auto;
-        column-gap: 150px;
         margin-top: 50px;
         .principle {
             color: inherit;
             text-decoration: none;
             break-inside: avoid-column;
             h2 {
-                text-transform: uppercase;
-                font-size: 16pt;
                 margin-bottom: 0;
+                font-size: 16pt;
+                text-transform: uppercase;
             }
             .description {
                 font-size: 12pt;
@@ -215,18 +211,18 @@ body.sighting {
         .meta {
             font-size: 10pt;
             dt {
-                border-top: 1px solid gray;
                 padding-top: 5px;
-                text-transform: uppercase;
+                border-top: 1px solid gray;
                 font-weight: bold;
+                text-transform: uppercase;
                 &::after {
                     content: ':';
                 }
             }
             dd {
                 margin-left: 0;
-                text-decoration: underline;
                 margin-bottom: 15px;
+                text-decoration: underline;
                 a {
                     color: inherit;
                 }
@@ -235,8 +231,8 @@ body.sighting {
     }
     .related-content h2 {
         margin-left: 15px;
-        text-transform: uppercase;
         font-size: 10pt;
+        text-transform: uppercase;
         &::after {
             content: ':';
         }
@@ -264,6 +260,12 @@ body.sighting {
                 content: '';
             }
         }
+        .banner {
+            display: none;
+        }
+    }
+    body.home header .description {
+        font-size: 10pt;
     }
 }
 @media only screen and (min-width: 800px) {
@@ -273,5 +275,9 @@ body.sighting {
             grid-template-columns: 640px 200px;
             grid-column-gap: 20px;
         }
+    }
+    body.principles .content .principles {
+        columns: 2 auto;
+        column-gap: 150px;
     }
 }
