@@ -3,11 +3,14 @@ layout: default
 ---
 
 {% assign poster_url = page.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' %}
+{% assign movie_url = page.media-key | prepend: site.media_base_url | append: '.mp4' %}
 
 <main class="sighting">
   <div class="content">
     <div>{{ page.principle }}</div>
-    <img src="{{ poster_url }}">
+    <a href="{{ movie_url }}">
+      <img src="{{ poster_url }}">
+    </a>
     <h1>{{ page.title }}</h1>
     {% if page.summary %}
       <div class="summary">{{ page.summary }}</div>
