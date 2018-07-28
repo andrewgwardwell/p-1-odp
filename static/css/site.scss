@@ -5,6 +5,7 @@ body {
     margin: 0;
 }
 header {
+    width: 100%;
     padding: 15px;
     nav {
         text-transform: uppercase;
@@ -28,6 +29,9 @@ header {
                 text-decoration: none;
             }
         }
+    }
+    nav {
+        font-size: 12px;
     }
 }
 header.default {
@@ -55,15 +59,12 @@ header.default {
             font-size: 12px;
         }
     }
-    nav {
-        font-size: 12px;
-    }
 }
 .sightings.grid {
     display: grid;
-    grid-template-columns: repeat(3, 350px);
+    grid-template-columns: repeat(auto-fill, 350px);
     grid-row-gap: 20px;
-    grid-column-gap: 5rem;
+    grid-column-gap: 10px;
     padding: 10px;
 }
 .sighting.card {
@@ -93,7 +94,7 @@ header.default {
         }
     }
     img {
-        width: 200px;
+        width: 220px;
     }
     .poster {
         position: relative;
@@ -186,9 +187,10 @@ body.sighting {
     main.sighting {
         margin: 20px;
         background: #ececeb;
-        display: grid;
-        grid-template-columns: 640px 200px;
-        grid-column-gap: 20px;
+        video {
+            max-width: 640px;
+            max-height: 360px;
+        }
         .principle {
             text-transform: uppercase;
         }
@@ -237,6 +239,39 @@ body.sighting {
         font-size: 10pt;
         &::after {
             content: ':';
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    body.sighting {
+        main.sighting {
+            video {
+                max-width: 320px;
+                max-height: 180px;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    header {
+        nav {
+            font-size: 9pt;
+            ul > li {
+                display: block;
+                text-align: right;
+            }
+            ul > li:not(:first-child):before {
+                content: '';
+            }
+        }
+    }
+}
+@media only screen and (min-width: 800px) {
+    body.sighting {
+        main.sighting {
+            display: grid;
+            grid-template-columns: 640px 200px;
+            grid-column-gap: 20px;
         }
     }
 }

@@ -2,16 +2,16 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>{% if page.title %}{{ page.title }}{{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} • {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
 
     <link rel="stylesheet" href="{{ "/static/css/site.css" | prepend: site.baseurl }}">
   </head>
 
-  <body class="{{ page.body-class }}">
+  <body class="{{ page.body-class }} {{ page.principle | slugify }}-principle">
     {{ content }}
   </body>
 </html>
