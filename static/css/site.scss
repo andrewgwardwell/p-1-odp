@@ -26,6 +26,50 @@ header {
         }
     }
 }
+.sightings.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 350px);
+    grid-row-gap: 20px;
+    grid-column-gap: 5rem;
+    padding: 10px;
+}
+.sighting.card {
+    display: block;
+    background: #ececeb;
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    .principle {
+        text-transform: uppercase;
+        font-size: 10px;
+    }
+    h1 {
+        text-transform: uppercase;
+        font-size: 18px;
+        &::after {
+            content: '!';
+        }
+    }
+    .summary {
+        font-size: 12px;
+        &::before {
+            content: '“';
+        }
+        &::after {
+            content: '”';
+        }
+    }
+    img {
+        width: 200px;
+    }
+    .poster {
+        position: relative;
+        background: green;
+        color: lightgreen;
+        height: 200px;
+        padding: 15px;
+    }
+}
 body.home {
     header {
         position: relative;
@@ -72,47 +116,8 @@ body.home {
             }
         }
     }
-    .sightings {
+    .sightings.grid {
         margin-top: 100px;
-        display: grid;
-        grid-template-columns: repeat(3, 350px);
-        grid-row-gap: 20px;
-        grid-column-gap: 5rem;
-        padding: 10px;
-        .sighting {
-            display: block;
-            background: #ececeb;
-            color: black;
-            padding: 10px;
-            text-decoration: none;
-            .principle {
-                text-transform: uppercase;
-                font-size: 10px;
-            }
-            h1 {
-                text-transform: uppercase;
-                font-size: 18px;
-            }
-            .summary {
-                font-size: 12px;
-                &::before {
-                    content: '“';
-                }
-                &::after {
-                    content: '”';
-                }
-            }
-            img {
-                width: 200px;
-            }
-            .poster {
-                position: relative;
-                background: green;
-                color: lightgreen;
-                height: 200px;
-                padding: 15px;
-            }
-        }
     }
 }
 body.sighting {
@@ -144,7 +149,7 @@ body.sighting {
             font-size: 12px;
         }
     }
-    .sighting {
+    main.sighting {
         margin: 20px;
         background: #ececeb;
         display: grid;
@@ -187,6 +192,14 @@ body.sighting {
                 text-decoration: underline;
                 margin-bottom: 15px;
             }
+        }
+    }
+    .related-content h2 {
+        margin-left: 15px;
+        text-transform: uppercase;
+        font-size: 10pt;
+        &::after {
+            content: ':';
         }
     }
 }
