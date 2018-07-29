@@ -179,6 +179,7 @@ body.principles .content {
     margin-top: 40px;
     .principle {
       @extend .link-block;
+      display: inline-block;
       break-inside: avoid;
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;

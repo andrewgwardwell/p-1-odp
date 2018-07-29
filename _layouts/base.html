@@ -14,4 +14,10 @@
   <body class="{{ page.body-class }} {{ page.principle | slugify }}-principle">
     {{ content }}
   </body>
+  <script>
+    window.addEventListener("load", function(event) {
+      document.querySelectorAll('.sightings.random.grid .sighting.card').forEach(
+        function(elt) {elt.style.order=Math.floor(100*Math.random())})
+    });
+  </script>
 </html>

@@ -58,7 +58,7 @@ layout: default
         <button class="course-button" onClick="showRelated('course')">by course</button>
       {% endif %}
     </div>
-  <div class="sightings grid">
+  <div class="sightings random grid">
     {% for sighting in related %}
       {% assign visibleClass = '' %}
       {% if sighting.principle != page.principle %}
