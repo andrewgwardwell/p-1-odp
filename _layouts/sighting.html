@@ -71,7 +71,11 @@ layout: default
         <div class="principle">{{ sighting.principle }}</div>
         <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}"/>
         <h1>{{ sighting.title }}</h1>
-        <div class="summary">{{ sighting.summary | default: 'TBD' }}</div>
+        {% if sighting.summary %}
+          <div class="quoted summary">{{ sighting.summary }}</div>
+        {% else %}
+          <div class="summary">Summary TBD</div>
+        {% endif %}
       </a>
     {% endfor %}
     </div>

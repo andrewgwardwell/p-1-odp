@@ -22,7 +22,7 @@ a {
   display: block;
   &:hover {
     text-decoration: none;
-    box-shadow: 0 0 5px $dark-background;
+    background: lightblue;
   }
 }
 .smallcap {
@@ -37,7 +37,6 @@ header {
     top: 10px;
     right: 10px;
     font-size: 12px;
-    text-transform: uppercase;
     ul {
       list-style-type: none;
       margin: 0;
@@ -45,10 +44,11 @@ header {
       overflow: hidden;
       li {
         display: inline;
-      }
-      li:not(:first-child):before {
-        content: '|';
-        padding: 10px;
+        text-transform: uppercase;
+        &:not(:first-child):before {
+          content: '|';
+          padding: 10px;
+        }
       }
     }
   }
@@ -145,10 +145,10 @@ header.home {
   }
   .summary {
     font-size: 12px;
-    &::before {
+    &.quoted::before {
       content: '“';
     }
-    &::after {
+    &.quoted::after {
       content: '”';
     }
   }
@@ -178,25 +178,22 @@ body.principles .content {
   .principles {
     margin-top: 40px;
     .principle {
-      display: block;
+      @extend .link-block;
       break-inside: avoid;
       page-break-inside: avoid;
       -webkit-column-break-inside: avoid;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      padding: 5px;
       h2 {
         margin-bottom: 0;
         margin-top: 0;
-        padding-top: 20px;
         font-size: 16pt;
       }
       .description {
         font-size: 12pt;
       }
-      &:hover {
-        text-decoration: none;
-        h2 {
-          text-decoration: underline;
-        }
-      }
+      border: 1px solid transparent;
     }
   }
 }
