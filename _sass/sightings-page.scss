@@ -56,12 +56,14 @@ body.sighting {
         content: ':';
       }
     }
-    &.same-principle .principle-button,
-    &.same-course .course-button {
+    &.same-course .course-button,
+    &.same-instructor .instructor-button,
+    &.same-principle .principle-button {
       text-decoration: underline;
     }
-    &.same-principle .different-principle,
-    &.same-course .different-course {
+    &.same-course .different-course,
+    &.same-instructor .different-instructor,
+    &.same-principle .different-principle {
       display: none;
     }
   }

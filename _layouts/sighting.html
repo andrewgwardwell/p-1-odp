@@ -47,25 +47,32 @@ layout: default
 
 {% assign related-sightings = '' | split: '' %}
 {% assign course-count = 0 %}
+{% assign instructor-count = 0 %}
 {% assign principle-count = 0 %}
 {% for sighting in site.sightings %}
   {% if sighting.path == page.path %}{% continue %}{% endif %}
-  {% assign totals-0 = course-count | plus: principle-count %}
+  {% assign totals-0 = course-count | plus: instructor-count | plus: principle-count %}
   {% if sighting.course-number == page.course-number %}{% assign course-count = course-count | plus: 1 %}{% endif %}
+  {% assign shares-instructor = sighting | shares_instructor: page %}
+  {% if shares-instructor %}{% assign instructor-count = instructor-count | plus: 1 %}{% endif %}
   {% if sighting.principle == page.principle %}{% assign principle-count = principle-count | plus: 1 %}{% endif %}
-  {% assign totals-1 = course-count | plus: principle-count %}
+  {% assign totals-1 = course-count | plus: instructor-count | plus: principle-count %}
   {% if totals-0 == totals-1 %}{% continue %}{% endif %}
   {% assign related-sightings = related-sightings | push: sighting %}
 {% endfor %}
 
-{% assign initial-selection = 'principle' %}
-{% assign total-count = course-count | plus: principle-count %}
-{% if principle-count == 0 %}{% assign initial-selection = 'course' %}{% endif %}
-<section class="related-content same-{{ initial-selection }} if-{{ total-count }}">
+{% assign initial-filter = 'principle' %}
+{% assign total-count = course-count | plus: instructor-count | plus: principle-count %}
+{% if principle-count == 0 %}
+  {% assign initial-filter = 'course' %}
+  {% if course-count == 0 %}{% assign initial-filter = 'instructor' %}{% endif %}
+{% endif %}
+<section class="related-content same-{{ initial-filter }} if-{{ total-count }}">
   <h2>Related Content</h2>
   <div style="padding-left: 15px;">
-    <button class="principle-button if-{{ principle-count }}" onClick="showRelated('principle')">by principle</button>
-    <button class="course-button if-{{ course-count }}" onClick="showRelated('course')">by course</button>
+    <button class="if-{{ principle-count }}" onClick="showRelated('principle')">by principle</button>
+    <button class="if-{{ course-count }}" onClick="showRelated('course')">by course</button>
+    <button class="if-{{ instructor-count }}" onClick="showRelated('instructor')">shared instructor</button>
   </div>
 <div class="sightings random grid">
   {% for sighting in related-sightings %}
@@ -75,6 +82,10 @@ layout: default
     {% endif %}
     {% if sighting.course-number != page.course-number %}
       {% assign visibleClass = visibleClass | append: ' different-course' %}
+    {% endif %}
+    {% assign shares-instructor = sighting | shares_instructor: page %}
+    {% if shares-instructor %}{% else %}
+      {% assign visibleClass = visibleClass | append: ' different-instructor' %}
     {% endif %}
     <a class="sighting card {{ visibleClass }}" href={{ sighting.url }}>
       <div class="principle">{{ sighting.principle }}</div>

@@ -52,4 +52,14 @@ module CoursePages
       end
     end
   end
+
+  module LiquidFilters
+    def shares_instructor(p1, p2)
+      instructors1 = ([p1['course-instructor']] + (p1['course-instructors'] || [])).compact
+      instructors2 = ([p2['course-instructor']] + (p2['course-instructors'] || [])).compact
+      !(instructors1 & instructors2).empty?
+    end
+  end
 end
+
+Liquid::Template.register_filter(CoursePages::LiquidFilters)
