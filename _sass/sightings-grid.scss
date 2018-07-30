@@ -1,0 +1,41 @@
+.sightings.grid {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, 350px);
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+}
+.sighting.card {
+  @extend .link-block;
+  padding: 10px;
+  background: $light-gray;
+  .principle {
+    font-size: 10px;
+    text-transform: uppercase;
+  }
+  h1 {
+    font-size: 18px;
+    &::after {
+      content: '!';
+    }
+  }
+  .summary {
+    font-size: 12px;
+    &.quoted::before {
+      content: '“';
+    }
+    &.quoted::after {
+      content: '”';
+    }
+  }
+  img {
+    width: 220px;
+  }
+  .poster {
+    position: relative;
+    height: 200px;
+    padding: 15px;
+    background: green;
+    color: lightgreen;
+  }
+}

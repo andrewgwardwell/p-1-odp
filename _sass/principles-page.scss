@@ -1,0 +1,38 @@
+// Principles page
+body.principles {
+  header {
+    background: $dark-background;
+  }
+  .content {
+    margin: 25px;
+    padding: 5px 25px;
+    background: $light-gray;
+    h1 {
+      position: relative;
+      left: -20px;
+      font-size: 12pt;
+    }
+    .principles {
+      margin-top: 40px;
+      .principle {
+        @extend .link-block;
+        display: inline-block;
+        break-inside: avoid;
+        page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        margin-bottom: 10px;
+        border-radius: 10px;
+        padding: 5px;
+        h2 {
+          margin-bottom: 0;
+          margin-top: 0;
+          font-size: 16pt;
+        }
+        .description {
+          font-size: 12pt;
+        }
+        border: 1px solid transparent;
+      }
+    }
+  }
+}

@@ -1,3 +1,6 @@
+# Cache
+.sass-cache/
+
 # Build directory
 _site/
 
