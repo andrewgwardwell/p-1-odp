@@ -8,13 +8,15 @@ module CoursePages
     def generate(site)
       @site = site
       @sightings = site.collections['sightings'].docs
+      check_principles!
+      add_frontmatter!
       create_course_pages!
       create_instructor_pages!
     end
 
     private
 
-    def intern_collection(name)
+    def intern_collection!(name)
       site.collections[name] ||= Jekyll::Collection.new(site, name)
     end
 
@@ -23,8 +25,14 @@ module CoursePages
       # TODO check that these are present in site.collections['principles']
     end
 
+    def add_frontmatter!
+      site.collections['principles'].docs.each do |doc|
+        doc.data['principle'] ||= doc.data['title']
+      end
+    end
+
     def create_course_pages!
-      coll = intern_collection('courses')
+      coll = intern_collection! 'courses'
       course_numbers = sightings.map { |doc| doc['course-number'] }.compact.uniq
       course_numbers.each do |course_number|
         slug = Jekyll::Utils.slugify course_number
@@ -38,7 +46,7 @@ module CoursePages
     end
 
     def create_instructor_pages!
-      coll = intern_collection('instructors')
+      coll = intern_collection! 'instructors'
       instructors = sightings.map do |doc|
         [doc['course-instructor']] + (doc['course-instructors'] || [])
       end.flatten.compact.uniq
@@ -54,9 +62,9 @@ module CoursePages
   end
 
   module LiquidFilters
-    def shares_instructor(p1, p2)
-      instructors1 = ([p1['course-instructor']] + (p1['course-instructors'] || [])).compact
-      instructors2 = ([p2['course-instructor']] + (p2['course-instructors'] || [])).compact
+    def shares_instructor(doc1, doc2)
+      instructors1 = ([doc1['course-instructor']] + (doc1['course-instructors'] || [])).compact
+      instructors2 = ([doc2['course-instructor']] + (doc2['course-instructors'] || [])).compact
       !(instructors1 & instructors2).empty?
     end
   end
