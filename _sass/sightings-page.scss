@@ -42,7 +42,9 @@ body.sighting {
       dd {
         margin-left: 0;
         margin-bottom: 15px;
-        text-decoration: underline;
+        a {
+          text-decoration: underline;
+        }
       }
     }
   }

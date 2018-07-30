@@ -29,7 +29,16 @@ layout: default
       <dt>Principle</dt>
       <dd><a href="{{ principle_url }}">{{ page.principle }}</a></dd>
       <dt>Teaching Team</dt>
-      <dd>{{ page.course-instructor }}{{ page.course-instructors | join: ', ' }}</dd>
+      <dd>
+        {% if page.course-instructor %}
+          <a href="/instructors/{{ page.course-instructor | slugify | remove: "-ph-d" }}">{{ page.course-instructor }}</a>
+        {% else %}
+          {% for instructor in page.course-instructors %}
+            {%- if forloop.index0 > 0 %}, {% endif %}
+            <a href="/instructors/{{ instructor | slugify | remove: "-ph-d" }}">{{ instructor }}</a>
+          {%- endfor -%}
+        {% endif %}
+      </dd>
       <dt>Course</dt>
       <dd><a href="{{ course_url }}">{{ page.course-number }} {{ page.course-title }}</a></dd>
     </dl>

@@ -9,6 +9,9 @@ collections:
   courses:
     title: Courses
     output: true
+  instructors:
+    title: Instructors
+    output: true
   principles:
     title: Principles
     output: true
@@ -38,6 +41,11 @@ defaults:
       type: courses
     values:
       layout: course
+  - scope:
+      path: ''
+      type: instructors
+    values:
+      layout: instructor
 
 exclude:
   - Gemfile
