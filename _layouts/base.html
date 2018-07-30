@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ "/static/css/site.css" | prepend: site.baseurl }}">
   </head>
 
-  <body class="{{ page.body-class }} {{ page.principle | slugify }}-principle">
+  <body class="{{ page.body-class }} principle-{{ page.principle | slugify | default: 'none' }}">
     {{ content }}
   </body>
   <script>

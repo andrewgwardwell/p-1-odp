@@ -2,6 +2,8 @@ header {
   margin: 1px;
   padding-left: 15px;
   padding-top: 15px;
+  background: $default-header-bg;
+  box-shadow: 0 0 $header-blur-radius $dark-background;
   nav {
     position: absolute;
     top: 10px;
@@ -26,8 +28,6 @@ header {
 header.default {
   height: 40px;
   padding-top: 5px;
-  background: #234173;
-  box-shadow: 0 0 $header-blur-radius #234173;
   color: white;
   .logo {
     color: white;
@@ -51,9 +51,7 @@ header.default {
 }
 header.home {
   position: relative;
-  background: $dark-background;
   color: white;
-  box-shadow: 0 0 $header-blur-radius $dark-background;
   .logo {
     width: 120px;
     padding: 5px;
@@ -91,7 +89,22 @@ header.home {
       font-size: 20px;
     }
   }
-} // vertical nav
+}
+body.principle-encouraging-healthy-team-experiences,
+body.principle-fostering-student-autonomy {
+  header {
+    background: $green-header-bg;
+    box-shadow: 0 0 $header-blur-radius $green-header-bg;
+  }
+}
+body.principle-making-thinking-visible,
+body.principle-crossing-disciplinary-boundaries {
+  header {
+    background: $blue-header-bg;
+    box-shadow: 0 0 $header-blur-radius $blue-header-bg;
+  }
+}
+// vertical nav
 @media only screen and (max-width: 800px) {
   header {
     nav {

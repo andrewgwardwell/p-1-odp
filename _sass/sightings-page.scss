@@ -49,12 +49,17 @@ body.sighting {
     }
   }
   .related-content {
+    position: relative;
+
     h2 {
       margin-left: 15px;
       font-size: 10pt;
       &::after {
         content: ':';
       }
+    }
+    .buttons {
+      padding-left: 15px;
     }
     &.same-course .course-button,
     &.same-instructor .instructor-button,

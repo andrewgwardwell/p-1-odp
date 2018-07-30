@@ -69,10 +69,10 @@ layout: default
 {% endif %}
 <section class="related-content same-{{ initial-filter }} if-{{ total-count }}">
   <h2>Related Content</h2>
-  <div style="padding-left: 15px;">
-    <button class="if-{{ principle-count }}" onClick="showRelated('principle')">by principle</button>
-    <button class="if-{{ course-count }}" onClick="showRelated('course')">by course</button>
-    <button class="if-{{ instructor-count }}" onClick="showRelated('instructor')">shared instructor</button>
+  <div class="buttons">
+    <button class="principle-button if-{{ principle-count }}" onClick="setRelatedFilter('principle')">by principle</button>
+    <button class="course-button if-{{ course-count }}" onClick="setRelatedFilter('course')">by course</button>
+    <button class="instructor-button if-{{ instructor-count }}" onClick="setRelatedFilter('instructor')">same instructor</button>
   </div>
 <div class="sightings random grid">
   {% for sighting in related-sightings %}
@@ -102,8 +102,8 @@ layout: default
 </section>
 
 <script>
-  function showRelated(sel) {
+  function setRelatedFilter(filterName) {
     const elt = document.querySelector('.related-content');
-    elt.className = elt.className.replace(/\bsame-\w+/, ' same-' + sel);
+    elt.className = elt.className.replace(/\bsame-\w+/, ' same-' + filterName);
   }
 </script>
