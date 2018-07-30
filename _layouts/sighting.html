@@ -4,7 +4,8 @@ layout: default
 
 {% assign poster_url = page.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' %}
 {% assign movie_url = page.media-key | prepend: site.media_base_url | append: '.mp4' %}
-{% assign principle_url = page.principle | slugify | prepend: '/principles/' %}
+{% assign course_url = site.courses | where: 'course-number', page.course-number | map: 'url' %}
+{% assign principle_url = site.principles | where: 'title', page.principle | map: 'url' %}
 
 <main class="sighting">
   <div class="content">
@@ -30,7 +31,7 @@ layout: default
       <dt>Teaching Team</dt>
       <dd>{{ page.teaching-team }}</dd>
       <dt>Course</dt>
-      <dd><a href="/courses/{{ page.course-number | slugify }}">{{ page.course-number }} {{ page.course-title }}</a></dd>
+      <dd><a href="{{ course_url }}">{{ page.course-number }} {{ page.course-title }}</a></dd>
     </dl>
   </aside>
 </main>
