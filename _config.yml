@@ -6,6 +6,9 @@ collections:
   pages:
     output: true
     permalink: /:path
+  courses:
+    title: Courses
+    output: true
   principles:
     title: Principles
     output: true
@@ -30,6 +33,11 @@ defaults:
     values:
       body-class: sighting
       layout: sighting
+  - scope:
+      path: ''
+      type: courses
+    values:
+      layout: course
 
 exclude:
   - Gemfile

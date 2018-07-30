@@ -29,8 +29,8 @@ layout: default
       <dd><a href="{{ principle_url }}">{{ page.principle }}</a></dd>
       <dt>Teaching Team</dt>
       <dd>{{ page.teaching-team }}</dd>
-      <dt>Class</dt>
-      <dd>{{ page.course-number }} {{ page.course-title }}</dd>
+      <dt>Course</dt>
+      <dd><a href="/courses/{{ page.course-number | slugify }}">{{ page.course-number }} {{ page.course-title }}</a></dd>
     </dl>
   </aside>
 </main>
