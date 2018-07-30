@@ -36,27 +36,26 @@ layout: default
 </main>
 
 {% assign related = '' | split: '' %}
-{% assign courseCount = 0 %}
-{% assign principleCount = 0 %}
+{% assign course-count = 0 %}
+{% assign principle-count = 0 %}
 {% for sighting in site.sightings %}
   {% if sighting.path == page.path %}{% continue %}{% endif %}
-  {% if sighting.course-number == page.course-number %}{% assign courseCount = courseCount | plus: 1 %}{% endif %}
-  {% if sighting.principle == page.principle %}{% assign principleCount = principleCount | plus: 1 %}{% endif %}
+  {% assign totals-0 = course-count | plus: principle-count %}
+  {% if sighting.course-number == page.course-number %}{% assign course-count = course-count | plus: 1 %}{% endif %}
+  {% if sighting.principle == page.principle %}{% assign principle-count = principle-count | plus: 1 %}{% endif %}
+  {% assign totals-1 = course-count | plus: principle-count %}
+  {% if totals-0 == totals-1 %}{% continue %}{% endif %}
   {% assign related = related | push: sighting %}
 {% endfor %}
 
-{% if courseCount > 0 or principleCount > 0 %}
+{% if course-count > 0 or principle-count > 0 %}
 {% assign initial-selection = 'principle' %}
-{% if principleCount == 0 %}{% assign initial-selection = 'course' %}{% endif %}
+{% if principle-count == 0 %}{% assign initial-selection = 'course' %}{% endif %}
   <section class="related-content same-{{ initial-selection }}">
     <h2>Related Content</h2>
     <div style="padding-left: 15px;">
-      {% if principleCount > 0 %}
-        <button class="principle-button" onClick="showRelated('principle')">by principle</button>
-      {% endif %}
-      {% if courseCount > 0 %}
-        <button class="course-button" onClick="showRelated('course')">by course</button>
-      {% endif %}
+      <button class="principle-button if-{{ principle-count }}" onClick="showRelated('principle')">by principle</button>
+      <button class="course-button if-{{ course-count }}" onClick="showRelated('course')">by course</button>
     </div>
   <div class="sightings random grid">
     {% for sighting in related %}
