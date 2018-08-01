@@ -6,7 +6,7 @@ layout: default
 
 <div class="principles">
   {% for principle in site.principles %}
-    <a class="principle" href="{{ principle.url }}">
+    <a class="principle" href="{{ principle.url | relative_url }}">
       <h2>{{ principle.title }}</h2>
       <div class="description">{{ principle.content }}</div>
     </a>

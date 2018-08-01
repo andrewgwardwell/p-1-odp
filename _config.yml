@@ -1,6 +1,7 @@
 timezone: America/New_York
 title: Olin Design Principles
 media_base_url: https://olin-design-principles.s3.amazonaws.com/
+# baseurl: /odp
 
 collections:
   pages:

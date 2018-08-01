@@ -8,7 +8,7 @@
     <title>{% if page.title %}{{ page.title }} • {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
 
-    <link rel="stylesheet" href="{{ "/static/css/site.css" | prepend: site.baseurl }}">
+    <link rel="stylesheet" href="{{ site.baseurl }}/static/css/site.css">
   </head>
 
   <body class="{{ page.body-class }} principle-{{ page.principle | slugify | default: 'none' }}">

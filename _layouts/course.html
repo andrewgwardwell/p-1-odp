@@ -10,7 +10,7 @@ layout: default
 <div class="sightings random grid">
   {% for sighting in site.sightings %}
   {% if sighting.course-number != page.course-number %}{% continue %}{% endif %}
-  <a class="sighting card" href={{ sighting.url }}>
+  <a class="sighting card" href={{ sighting.url | relative_url }}>
     <div class="principle">{{ sighting.principle }}</div>
     <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}"/>
     <h1>{{ sighting.title }}</h1>
