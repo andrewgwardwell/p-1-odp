@@ -9,3 +9,7 @@
 ## Develop
 
 `bundle exec jekyll serve`
+
+## Deploy
+
+`bundle exec jekyll build && netlify deploy`
