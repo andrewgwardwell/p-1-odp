@@ -8,7 +8,7 @@ header {
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 12px;
+    font-size: 13.75px;
     ul {
       list-style-type: none;
       margin: 0;
@@ -53,40 +53,46 @@ header.home {
   position: relative;
   color: white;
   .logo {
-    width: 120px;
-    padding: 5px;
-    border: 5px solid white;
+    width: 90px;
+    padding: 4px 8px;
+    padding-top: 10px;
+    border: 8px solid white;
     .year {
       font-size: 10px;
     }
     .title {
       font-size: 40px;
+      font-weight: bold;
     }
     .subtitle {
-      font-size: 15px;
+      font-size: 12px;
+      font-weight: bold;
+      line-height: 1.1;
       text-transform: uppercase;
     }
   }
   .description {
-    max-width: 350px;
-    margin-top: 80px;
+    max-width: 295px;
+    margin-top: 95px;
     padding-bottom: 5px;
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 1.45;
     text-transform: uppercase;
   }
   .banner {
     display: none;
     position: absolute;
     top: 80px;
-    width: 550px;
+    width: 820px;
     right: 20px;
-    padding: 20px;
-    padding-top: 120px;
+    padding: 40px;
+    padding-top: 250px;
+    padding-bottom: 50px;
     background: black;
     color: white;
-    font-size: 30px;
+    font-size: 35px;
     small {
-      font-size: 20px;
+      font-size: 15px;
     }
   }
 }
