@@ -1,7 +1,31 @@
-@media only screen and (min-width: 1000px) {
+header.home {
+  .banner {
+    display: none;
+    position: absolute;
+    top: 104px;
+    left: 470px;
+    width: 857px - 80px;
+    height: 408px - 250px;
+    padding: 250px 40px 0 40px;
+    background: black;
+    color: white;
+    font-size: 35px;
+    small {
+      font-size: 15px;
+    }
+  }
+}
+@media only screen and (min-width: 1320px) {
   body.home {
     .sightings.grid {
-      margin-top: 130px;
+      margin-top: 185px;
     }
+  }
+  header.home .description {
+    margin-top: 20px;
+    font-size: 9pt;
+  }
+  header.home .banner {
+    display: block;
   }
 }

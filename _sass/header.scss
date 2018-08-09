@@ -52,7 +52,10 @@ header.default {
 header.home {
   position: relative;
   color: white;
+  height: 370px;
   .logo {
+    position: absolute;
+    top: 40px;
     width: 90px;
     padding: 4px 8px;
     padding-top: 10px;
@@ -72,28 +75,13 @@ header.home {
     }
   }
   .description {
+    position: absolute;
+    top: 235px;
     max-width: 295px;
-    margin-top: 95px;
     padding-bottom: 5px;
     font-size: 12px;
     line-height: 1.45;
     text-transform: uppercase;
-  }
-  .banner {
-    display: none;
-    position: absolute;
-    top: 80px;
-    width: 820px;
-    right: 20px;
-    padding: 40px;
-    padding-top: 250px;
-    padding-bottom: 50px;
-    background: black;
-    color: white;
-    font-size: 35px;
-    small {
-      font-size: 15px;
-    }
   }
 }
 body.principle-encouraging-healthy-team-experiences,
@@ -127,10 +115,5 @@ body.principle-crossing-disciplinary-boundaries {
   header.home .description {
     margin-top: 20px;
     font-size: 9pt;
-  }
-}
-@media only screen and (min-width: 1000px) {
-  header.home .banner {
-    display: block;
   }
 }

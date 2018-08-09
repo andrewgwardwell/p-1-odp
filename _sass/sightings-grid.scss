@@ -1,9 +1,10 @@
 .sightings.grid {
   display: grid;
   padding: 10px;
-  grid-template-columns: repeat(auto-fill, 400px);
+  padding-left: 32px;
+  grid-template-columns: repeat(auto-fill, 415px);
   grid-row-gap: 20px;
-  grid-column-gap: 10px;
+  grid-column-gap: 25px;
 }
 .sighting.card {
   @extend .link-block;
@@ -31,7 +32,7 @@
     }
   }
   img {
-    width: 382px;
+    width: 392px;
   }
   .poster {
     position: relative;
