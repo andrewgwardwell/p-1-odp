@@ -1,11 +1,19 @@
+$banner-width: 857px;
+$banner-height: 408px;
+
 header.home {
+  transition: height 1;
+  .description {
+    top: 190px;
+    transition: margin-top 0.25s;
+  }
   .banner {
     display: none;
     position: absolute;
     top: 104px;
     left: 470px;
-    width: 857px;
-    height: 408px;
+    width: $banner-width;
+    height: $banner-height;
     .background,
     .content {
       position: absolute;
@@ -15,32 +23,45 @@ header.home {
       height: 100%;
     }
     .background {
-      background-size: 857px;
+      background-size: $banner-width;
     }
     .content {
-      padding: 250px 40px 0 40px;
-      width: 857px - 2 * 40px;
-      height: 408px - 250px;
+      $pad-left: 45px;
+      $pad-right: 160px;
+      padding: 250px $pad-right 0 $pad-left;
+      width: $banner-width - $pad-left - $pad-right;
+      height: $banner-height - 250px;
       background-color: rgba(0, 0, 0, 0.5);
-    }
-    color: white;
-    font-size: 35px;
-    small {
       font-size: 15px;
+      .title {
+        font-size: 35px;
+        line-height: 42px;
+        text-transform: none;
+      }
     }
   }
 }
-@media only screen and (min-width: 1320px) {
-  body.home {
-    .sightings.grid {
-      margin-top: 185px;
-    }
+body.home {
+  .sightings.grid {
+    transition: margin-top 0.25s;
   }
+}
+@media only screen and (max-width: 1336px) {
+  header.home {
+    height: 285px;
+  }
+}
+@media only screen and (min-width: 1337px) {
   header.home .description {
     margin-top: 20px;
     font-size: 9pt;
   }
   header.home .banner {
     display: block;
+  }
+  body.home {
+    .sightings.grid {
+      margin-top: 185px;
+    }
   }
 }
