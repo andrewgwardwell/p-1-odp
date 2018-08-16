@@ -3,7 +3,7 @@ header {
   padding-left: 15px;
   padding-top: 15px;
   background: $default-header-bg;
-  box-shadow: 0 0 $header-blur-radius $dark-background;
+  box-shadow: 0 0 $header-blur-radius $default-header-bg;
   nav {
     position: absolute;
     top: 65px;
