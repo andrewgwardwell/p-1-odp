@@ -2,15 +2,21 @@
 body.principles {
   .content {
     margin: 25px;
-    padding: 5px 25px;
+    margin-left: 33px;
+    margin-right: 33px;
+    padding: 5px 50px;
     background: $light-gray;
     h1 {
       position: relative;
       left: -20px;
-      font-size: 12pt;
+      font-size: 12px;
+      font-weight: normal;
+      padding-bottom: 25px;
     }
+    font-size: 18px;
+    line-height: 21.6px;
     .principles {
-      margin-top: 40px;
+      margin-top: 75px;
       .principle {
         @extend .link-block;
         display: inline-block;
@@ -21,12 +27,10 @@ body.principles {
         border-radius: 10px;
         padding: 5px;
         h2 {
-          margin-bottom: 0;
-          margin-top: 0;
-          font-size: 16pt;
-        }
-        .description {
-          font-size: 12pt;
+          margin-bottom: 7px;
+          margin-top: 15px;
+          font-size: 29px;
+          font-weight: normal;
         }
         border: 1px solid transparent;
       }

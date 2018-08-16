@@ -6,8 +6,8 @@ header {
   box-shadow: 0 0 $header-blur-radius $dark-background;
   nav {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 65px;
+    right: 100px;
     font-size: 13.75px;
     ul {
       list-style-type: none;
@@ -26,25 +26,29 @@ header {
   }
 }
 header.default {
-  height: 40px;
+  height: 101px;
   padding-top: 5px;
   color: white;
   .logo {
     color: white;
     .box {
-      width: 18px;
+      width: 27px;
       padding: 5px;
-      font-size: 12px;
-      border: 1px solid white;
+      margin-top: 33px;
+      padding-top: 14px;
+      font-weight: bold;
+      font-size: 15px;
+      border: 2.5px solid white;
     }
-    .box,
     .title {
-      float: left;
-    }
-    .title {
-      width: 80px;
+      position: absolute;
+      top: 46px;
+      left: 60px;
+      width: 180px;
       padding-left: 10px;
-      font-size: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 20px;
       text-transform: uppercase;
     }
   }
