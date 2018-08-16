@@ -9,21 +9,25 @@
 .sighting.card {
   @extend .link-block;
   padding: 10px;
-  padding-top: 15px;
+  padding-top: 17px;
   height: 410px;
-  background: $light-gray;
+  background: $card-background;
   .principle {
-    font-size: 10px;
+    font-size: 12px;
     text-transform: uppercase;
+    padding-bottom: 5px;
   }
   h1 {
-    font-size: 18px;
+    padding-top: 10px;
+    margin-bottom: 7px;
+    font-size: 20px;
+    font-weight: normal;
     &::after {
       content: '!';
     }
   }
   .summary {
-    font-size: 12px;
+    font-size: 15px;
     &.quoted::before {
       content: '“';
     }
