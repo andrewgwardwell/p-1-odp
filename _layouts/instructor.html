@@ -9,8 +9,10 @@ layout: default
 
 <div class="sightings random grid">
   {% for sighting in site.sightings %}
-  {% if sightings.course-instructor contains page.instructor %}{% else %}
-    {% if sighting.course-instructor != page.instructor %}{% continue %}{% endif %}
+  {% if sighting.course-instructors %}
+    {% unless sighting.course-instructors contains page.title %}{% continue %}{% endunless%}
+  {% else %}
+    {% unless sighting.course-instructor == page.title %}{% continue %}{% endunless %}
   {% endif %}
   <a class="sighting card" href={{ sighting.url | relative_url }}>
     <div class="principle">{{ sighting.principle }}</div>
