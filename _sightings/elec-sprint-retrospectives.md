@@ -6,3 +6,7 @@ course-number: ENGR 321
 course-title: Elacanisms
 course-instructor: Brad Minch
 ---
+
+* Team reflection
+* “Pluses” and “deltas”
+* Every voice matters

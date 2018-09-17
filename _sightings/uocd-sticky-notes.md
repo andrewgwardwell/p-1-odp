@@ -9,3 +9,7 @@ course-instructors:
 - Aaron Hoover
 - Brad Minch
 ---
+
+* Visual representations
+* Designate team workspaces
+* Create communication artifacts

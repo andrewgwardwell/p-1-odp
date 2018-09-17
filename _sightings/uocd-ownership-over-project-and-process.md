@@ -9,3 +9,7 @@ course-instructors:
 - Aaron Hoover
 - Brad Minch
 ---
+
+* Scaffolded process development
+* Multiple phases with repeated deliverables
+* Student-led design process

@@ -7,3 +7,6 @@ course-title: Elacanisms
 course-instructor: Brad Minch
 summary: A sprint review caps two weeks of intensive work and gives students a chance to make their thinking visible, tangible and to get feedback on their progress...
 ---
+
+* Frequent opportunities to present
+* Demo as a critical component

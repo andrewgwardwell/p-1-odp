@@ -6,3 +6,7 @@ course-number: AHSE 2114
 course-title: Science Fiction and Historical Context
 course-instructor: Rob Martello
 ---
+
+* Choice in what to work on
+* Student-led analysis
+* Gallery walk

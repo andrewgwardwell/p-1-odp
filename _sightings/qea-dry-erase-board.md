@@ -10,3 +10,7 @@ course-instructors:
 - Mark Somerville
 media-key: 5_QEA_Making Thinking Visible
 ---
+
+* Step by step illustrations
+* Graphical visualization
+* Real-time faculty feedback

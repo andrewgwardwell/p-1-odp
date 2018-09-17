@@ -10,3 +10,7 @@ course-instructors:
 - Mark Somerville
 media-key: 4_QEA_Crossing Disciplinary Boundaries
 ---
+
+* Integrated math, physics and engineering course
+* Learning in context
+* Project-based learning
