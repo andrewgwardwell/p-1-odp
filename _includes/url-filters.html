@@ -1,0 +1,89 @@
+<div class="filter-by-label">
+        <label>Filter By:</label>
+    </div>
+    <div class="filters url-filters">
+        <div class="type-filter">
+            <div class="filter-box">
+                <select class="cs-select cs-skin-border" name="type" id="type-select">
+                    {% if(include.type == 'any')%}
+                    <option value="" selected disabled>Choose</option>
+                    {% endif %}
+                    {% if(include.type == 'principle')%}
+                    <option value="principles" selected>Principles</option>
+                    {% else %}
+                    <option value="principles">Principles</option>
+                    {% endif %}
+                    {% if(include.type == 'course')%}
+                    <option value="courses" selected>Courses</option>
+                    {% else %}
+                    <option value="courses">Courses</option>
+                    {% endif %}
+                    {% if(include.type == 'instructor')%}
+                    <option value="instructors" selected>Instructors</option>
+                    {% else %}
+                    <option value="instructors">Instructors</option>
+                    {% endif %}
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+        </div>
+        <div class="multi-filter">
+                {% if(include.type == 'principle')%}
+                <div class="filter-box active">
+                {% else %}
+                <div class="filter-box">
+                {% endif %}
+                <select class="cs-select cs-skin-border filter" name="principles" id="principles-select">
+                    {% if(include.type != 'principle')%}
+                    <option value="" selected disabled>Choose Principle</option>
+                    {% endif %}
+                    {% for principle in site.principles %}
+                        {% if(page.principle == principle.title) %}
+                        <option value="{{ principle.url }}" selected>{{ principle.title }}</option>
+                        {% else %}
+                        <option value="{{ principle.url }}">{{ principle.title }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            {% if(include.type == 'instructor')%}
+            <div class="filter-box active">
+            {% else %}
+            <div class="filter-box">
+            {% endif %}
+                <select class="cs-select cs-skin-border filter" name="instructors" id="instructors-select">
+                    {% if(include.type != 'instructor')%}
+                    <option value="" selected disabled>Choose Instructor</option>
+                    {% endif %}
+                    {% for item in site.instructors %}
+                        {% if(page.title == item.title) %}
+                        <option value="{{ site.baseurl }}/instructors/{{ item.title | slugify | remove: "-ph-d" }}" selected>{{ item.title }}</option>
+                        {% else %}
+                        <option value="{{ site.baseurl }}/instructors/{{ item.title | slugify | remove: "-ph-d" }}">{{ item.title }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+            {% if(include.type == 'course')%}
+            <div class="filter-box active">
+            {% else %}
+            <div class="filter-box">
+            {% endif %}
+                <select class="cs-select cs-skin-border filter" name="courses" id="courses-select">
+                    {% if(include.type != 'course')%}
+                    <option value="" selected disabled>Choose Course</option>
+                    {% endif %}
+                    {% for k in site.courses %}
+                        {% if(page.title == k.course-number) %}
+                        <option value="{{k.url}}" selected>{{ k.title }}</option>
+                        {% else %}
+                        <option value="{{k.url}}">{{ k.title }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <i class="fa fa-chevron-down"></i>
+            </div>
+        </div>
+    </div>

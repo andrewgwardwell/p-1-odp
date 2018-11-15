@@ -9,6 +9,7 @@ course-instructors:
 - John Geddes
 - Mark Somerville
 media-key: 4_QEA_Crossing Disciplinary Boundaries
+color: green
 ---
 
 * Integrated math, physics and engineering course

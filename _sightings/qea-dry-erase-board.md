@@ -9,6 +9,7 @@ course-instructors:
 - John Geddes
 - Mark Somerville
 media-key: 5_QEA_Making Thinking Visible
+color: green
 ---
 
 * Step by step illustrations

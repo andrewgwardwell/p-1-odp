@@ -5,8 +5,11 @@ media-key: 2_Elec_Healthy Team
 course-number: ENGR 321
 course-title: Elacanisms
 course-instructor: Brad Minch
-summary: A sprint review caps two weeks of intensive work and gives students a chance to make their thinking visible, tangible and to get feedback on their progress...
+summary: te, id pro iudico fuisset
+color: blue
 ---
+>Ius ne alia graece. Verear bonorum ius et, sit at vivendum perfecto ocurreret, errem homero conclusionemque cu eum. Cum ea recusabo reformidans disputationi.
 
-* Frequent opportunities to present
-* Demo as a critical component
+#### Dolor sit
+
+Lorem ipsum dolor sit amet, quis aperiam accommodare usu te, id pro iudico fuisset. Te detracto tincidunt efficiantur mel. His nibh erat labore ex. Aeterno intellegam cum no, ius ne alia graece. Verear bonorum ius et, sit at vivendum perfecto ocurreret, errem homero conclusionemque cu eum. Cum ea recusabo reformidans disputationi.

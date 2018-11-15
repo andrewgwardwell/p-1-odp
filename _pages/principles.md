@@ -3,7 +3,7 @@ body-class: principles
 layout: principles
 ---
 
-# The Principles
+###### The Principles
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin nunc
 at ipsum volutpat iaculis. Donec at lectus quis nunc placerat ullamcorper vitae

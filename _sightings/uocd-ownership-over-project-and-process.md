@@ -8,6 +8,7 @@ course-instructors:
 - Alisha Sarang-Sieminski, Ph.D.
 - Aaron Hoover
 - Brad Minch
+color: blue
 ---
 
 * Scaffolded process development

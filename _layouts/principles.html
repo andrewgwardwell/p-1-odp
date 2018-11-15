@@ -1,14 +1,17 @@
 ---
 layout: default
 ---
+{% include url-filters.html type="any" %}
+<div class="inner">
+    {{ content }}
 
-{{ content }}
-
-<div class="principles">
-  {% for principle in site.principles %}
-    <a class="principle" href="{{ principle.url | relative_url }}">
-      <h2>{{ principle.title }}</h2>
-      <div class="description">{{ principle.content }}</div>
-    </a>
-  {% endfor %}
+    <div class="principles">
+      {% for principle in site.principles %}
+        <a class="principle" href="{{ principle.url | relative_url }}">
+          <h2>{{ principle.title }}</h2>
+          <div class="description">{{ principle.content }}</div>
+        </a>
+      {% endfor %}
+    </div>
 </div>
+

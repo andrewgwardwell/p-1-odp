@@ -1,0 +1,48 @@
+<div class="filter-by-label">
+    <label>Filter By:</label>
+</div>
+<div class="filters">
+    <div class="type-filter">
+        <div class="filter-box">
+            <select class="cs-select cs-skin-border" name="type" id="type-select">
+                <option value="" disabled selected>Selection Type</option>
+                <option value="principles">Principles</option>
+                <option value="courses">Courses</option>
+                <option value="instructors">Instructors</option>
+            </select>
+            <i class="fa fa-chevron-down"></i>
+        </div>
+    </div>
+    <div class="multi-filter">
+        <div class="filter-box">
+            <select class="cs-select cs-skin-border filter" name="principles" id="principles-select">
+                <option value="" disabled selected>Select a Principle</option>
+                <option value="all">Any</option>
+                {% for principle in site.principles %}
+                <option value="{{ principle.title }}">{{ principle.title }}</option>
+                {% endfor %}
+            </select>
+            <i class="fa fa-chevron-down"></i>
+        </div>
+        <div class="filter-box">
+            <select class="cs-select cs-skin-border filter" name="instructors" id="instructors-select">
+                <option value="" disabled selected>Select an Instructor</option>
+                <option value="all">Any</option>
+                {% for item in site.instructors %}
+                <option value="{{ item.title }}">{{ item.title }}</option>
+                {% endfor %}
+            </select>
+            <i class="fa fa-chevron-down"></i>
+        </div>
+        <div class="filter-box">
+            <select class="cs-select cs-skin-border filter" name="courses" id="courses-select">
+                <option value="" disabled selected>Select a Course</option>
+                <option value="all">Any</option>
+                {% for k in site.courses %}
+                <option value="{{ k.title }}">{{ k.title }}</option>
+                {% endfor %}
+            </select>
+            <i class="fa fa-chevron-down"></i>
+        </div>
+    </div>
+</div>

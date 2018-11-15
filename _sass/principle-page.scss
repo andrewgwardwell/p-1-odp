@@ -1,0 +1,26 @@
+.principle-desc{
+    // width: 100%;
+    padding: 10px 30px;
+    color: #FFF;
+    margin-bottom: 30px;
+    margin-top: 40px;
+    h1{
+        text-transform: none;
+    }
+
+    blockquote{
+        font-weight: bold;
+        margin: 20px 0;
+        p{
+            display: inline;
+        }
+        &::before {
+          content: '“';
+          display: inline;
+        }
+        &::after {
+          content: '”';
+          display: inline;
+        }
+      }
+}

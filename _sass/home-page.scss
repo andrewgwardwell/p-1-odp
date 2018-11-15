@@ -1,42 +1,80 @@
 $banner-width: 857px;
 $banner-height: 408px;
-
+.never-show{
+  display: none !important;
+}
 header.home {
   transition: height 1;
+  nav{
+    top: 40px;
+  }
   .description {
     top: 190px;
     transition: margin-top 0.25s;
   }
+  ul.slick-dots {
+    list-style: none;
+    position: absolute;
+    z-index: 9999;
+    top: 86%;
+    padding: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    li{
+        display: inline;
+        margin: 0 5px;
+        button{
+          color: transparent;
+          background: rgba($light-gray, 0.75);
+          border-radius: 15px;
+          width: 10px;
+          height: 10px;
+          border: none;
+          padding: 0;
+        }
+        &:hover,
+        &.slick-active{
+          cursor: pointer;
+          button{
+            background: #FFF;
+          }
+        }
+    }
+  } 
   .banner {
     display: none;
     position: absolute;
     top: 104px;
-    left: 470px;
+    right: 0;
     width: $banner-width;
     height: $banner-height;
-    .background,
+    background-size: contain;
+    @include breakpoint(xlarge){
+        display: block;
+    }
+    .slide{
+      width: $banner-width;
+      height: $banner-height;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
     .content {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
-    }
-    .background {
-      background-size: $banner-width;
-    }
-    .content {
-      $pad-left: 45px;
-      $pad-right: 160px;
-      padding: 250px $pad-right 0 $pad-left;
-      width: $banner-width - $pad-left - $pad-right;
-      height: $banner-height - 250px;
-      background-color: rgba(0, 0, 0, 0.5);
       font-size: 15px;
-      .title {
-        font-size: 35px;
-        line-height: 42px;
-        text-transform: none;
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.25);
+      .text {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 20px;
+        padding: 40px 20px;
+        .title {
+          font-size: 35px;
+          line-height: 42px;
+          text-transform: none;
+        }
       }
     }
   }
@@ -44,11 +82,9 @@ header.home {
 body.home {
   .sightings.grid {
     transition: margin-top 0.25s;
-  }
-}
-@media only screen and (max-width: 1336px) {
-  header.home {
-    height: 285px;
+    @include breakpoint(xlarge){
+      margin-top: 85px;
+    }
   }
 }
 @media only screen and (min-width: 1337px) {
@@ -56,12 +92,5 @@ body.home {
     margin-top: 20px;
     font-size: 9pt;
   }
-  header.home .banner {
-    display: block;
-  }
-  body.home {
-    .sightings.grid {
-      margin-top: 185px;
-    }
-  }
+
 }

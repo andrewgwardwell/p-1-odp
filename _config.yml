@@ -55,3 +55,8 @@ exclude:
   - lambda
   - scripts
   - TODO*
+
+sass:
+    load_paths:
+        - _sass
+        - node_modules

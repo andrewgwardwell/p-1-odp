@@ -1,13 +1,12 @@
 header {
   margin: 1px;
-  padding-left: 15px;
   padding-top: 15px;
   background: $default-header-bg;
   box-shadow: 0 0 $header-blur-radius $default-header-bg;
   nav {
     position: absolute;
-    top: 65px;
-    right: 100px;
+    top: 0px;
+    right: 0px;
     font-size: 13.75px;
     ul {
       list-style-type: none;
@@ -42,7 +41,7 @@ header.default {
     }
     .title {
       position: absolute;
-      top: 46px;
+      top: 0px;
       left: 60px;
       width: 180px;
       padding-left: 10px;
@@ -57,6 +56,12 @@ header.home {
   position: relative;
   color: white;
   height: 370px;
+
+  @include breakpoint(medium){
+    height: 370px;
+
+  }
+
   .logo {
     position: absolute;
     top: 40px;
@@ -91,15 +96,14 @@ header.home {
 body.principle-encouraging-healthy-team-experiences,
 body.principle-fostering-student-autonomy {
   header {
-    background: $green-header-bg;
-    box-shadow: 0 0 $header-blur-radius $green-header-bg;
+    // background: $green-header-bg;
   }
 }
 body.principle-making-thinking-visible,
 body.principle-crossing-disciplinary-boundaries {
   header {
-    background: $blue-header-bg;
-    box-shadow: 0 0 $header-blur-radius $blue-header-bg;
+    // background: $blue-header-bg;
+    // box-shadow: 0 0 $header-blur-radius $blue-header-bg;
   }
 }
 // vertical nav

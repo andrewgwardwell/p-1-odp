@@ -5,22 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="shortcut icon" href="{{ site.baseurl }}/static/favicon.png" sizes="128x128"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <title>{% if page.title %}{{ page.title }} • {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta name="description" content="{{ site.description }}">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="/js/classie.js"></script>
+		<script src="/js/selectFx.js"></script>
+		<script src="/js/odp.js"></script>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=PT+Sans">
     <link rel="stylesheet" href="{{ site.baseurl }}/static/css/site.css">
   </head>
 
-  <body class="{{ page.body-class }} principle-{{ page.principle | slugify | default: 'none' }}">
+  <body class="{{ page.body-class }} principle-{{ page.principle | slugify | default: 'none' }} color-{{page.color}}">
     {{ content }}
   </body>
-  <script>
-    window.addEventListener("load", function(event) {
-      document.querySelectorAll('.sightings.random.grid .sighting.card').forEach(
-        function(elt) {elt.style.order=Math.floor(100*Math.random())})
-    });
-  </script>
 </html>

@@ -2,10 +2,13 @@
 ---
 
 @import 'theme';
+@import 'normalize';
+@import 'filters';
 @import 'header';
 @import 'sightings-grid';
 @import 'home-page';
 @import 'principles-page';
+@import 'principle-page';
 @import 'sightings-page';
 body {
   margin: 0;

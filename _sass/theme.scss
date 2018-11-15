@@ -1,6 +1,85 @@
+@import '../node_modules/foundation-sites/scss/_global.scss';
+@import '../node_modules/foundation-sites/scss/foundation.scss';
+@import './font-awsome/scss/fontawesome.scss';
+@import './font-awsome/scss/regular.scss';
+
 $light-gray: #eeefef;
 $header-blur-radius: 18px;
 
-$default-header-bg: #282829;
-$blue-header-bg: #13488b;
-$green-header-bg: #0c6b3f;
+$dark-grey: #282829;
+$green: #0d6b3f;
+$blue: #13488b;
+$red: #BA002B;
+
+$default-header-bg: $dark-grey;
+$blue-header-bg: $blue;
+$green-header-bg: $green;
+
+$mobile: 480px;
+$tablet: 960px;
+$desktop: 1337px;
+
+.container{
+    display: block;
+    width: 97.5%;
+    max-width: 1500px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+
+header{
+    background: $dark-grey;
+    box-shadow: 0 0 $header-blur-radius $dark-grey;
+}
+.principle-desc{
+    background: $dark-grey;
+}
+
+.color-blue{
+    header{
+        background: $blue;
+        box-shadow: 0 0 $header-blur-radius $blue;
+    }
+    .principle-desc{
+        background: $blue;
+    }
+}
+
+.color-green{
+    header{
+        background: $green;
+        box-shadow: 0 0 $header-blur-radius $green;
+    }
+    .principle-desc{
+        background: $green;
+    }
+}
+.color-red{
+    header{
+        background: $red;
+        box-shadow: 0 0 $header-blur-radius $red;
+    }
+    .principle-desc{
+        background: $red;
+    }
+}
+
+.card-box{
+    @include breakpoint(large){
+        .card:first-child,
+        .card:nth-child(4n){
+          margin-left: 0;
+        }
+    }
+    @include breakpoint(xlarge){
+        .card:nth-child(4n){
+          margin-left: 1.333333%;
+        }
+        .card:first-child,
+        .card:nth-child(5n){
+          margin-left: 0;
+        }
+    }
+}

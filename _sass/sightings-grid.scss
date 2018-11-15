@@ -1,17 +1,43 @@
 .sightings.grid {
-  display: grid;
-  padding: 10px;
-  padding-left: 32px;
-  grid-template-columns: repeat(auto-fill, 415px);
-  grid-row-gap: 20px;
-  grid-column-gap: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  width: 100%;
+  
+  @include breakpoint(xlarge){
+    margin-top: 0px;
+    justify-content: start;
+  }
 }
 .sighting.card {
   @extend .link-block;
-  padding: 10px;
-  padding-top: 17px;
   height: 410px;
   background: $light-gray;
+  width: 100%;
+  margin-bottom: 20px;
+  @include breakpoint(large){
+    width: 30%;
+    margin-left: 1.5%;
+  }
+  @include breakpoint(xlarge){
+    width: 24%;
+    margin-left: 1.333333%;
+  }
+  &.show-card{
+    display: block;
+  }
+  &.hide-card{
+    display: none;
+  }
+  .inner{
+    padding: 10px;
+    &>{
+      display: inline-block;
+      width: 100%;
+    }
+  }
   .principle {
     font-size: 12px;
     text-transform: uppercase;
@@ -36,7 +62,7 @@
     }
   }
   img {
-    width: 392px;
+    width: 100%;
   }
   .poster {
     position: relative;
@@ -44,5 +70,20 @@
     padding: 15px;
     background: green;
     color: lightgreen;
+  }
+}
+@include breakpoint(large){
+  .card:first-child,
+  .card:nth-child(4n){
+    margin-left: 0;
+  }
+}
+@include breakpoint(xlarge){
+  .card:nth-child(4n){
+    margin-left: 1.333333%;
+  }
+  .card:first-child,
+  .card:nth-child(4n+1){
+    margin-left: 0;
   }
 }
