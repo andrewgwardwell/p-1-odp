@@ -1,9 +1,10 @@
 ---
 title: Fostering Student Autonomy
 color: green
+summary: Autonomous learning is the feeling that one is in control of and responsible for their own learning and success – both in terms of what they learn and how they learn. When teachers provide opportunities for students to learn autonomously, such as through supporting students with making decisions about their own learning and charting their own learning path, students become more independent, self-directed learners. Students who feel more autonomous in their learning have higher motivation to learn, are better able to self-monitor their own learning, are more aware of their own progress, have higher self-efficacy,and find value in their learning. 
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id fringilla metus. Quisque elit metus, lobortis ac lobortis eu, ultrices a nunc. Duis ut sem sit amet justo elementum sagittis. Aenean dapibus, leo ac maximus interdum, nibh elit efficitur sapien, nec sagittis risus lectus non tellus. Sed in tortor nisl. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur iaculis eros vel magna vulputate tincidunt.
+Autonomous learning is the feeling that one is in control of and responsible for their own learning and success – both in terms of what they learn and how they learn. When teachers provide opportunities for students to learn autonomously, such as through supporting students with making decisions about their own learning and charting their own learning path, students become more independent, self-directed learners. Students who feel more autonomous in their learning have higher motivation to learn, are better able to self-monitor their own learning, are more aware of their own progress, have higher self-efficacy,and find value in their learning. 
 
 ----
 

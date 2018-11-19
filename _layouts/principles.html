@@ -9,7 +9,11 @@ layout: default
       {% for principle in site.principles %}
         <a class="principle" href="{{ principle.url | relative_url }}">
           <h2>{{ principle.title }}</h2>
+          {% if(principle.summary) %}
+          <div class="description">{{ principle.summary }}</div>
+          {% else %}
           <div class="description">{{ principle.content }}</div>
+          {% endif %}
         </a>
       {% endfor %}
     </div>

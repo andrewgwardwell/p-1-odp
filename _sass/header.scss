@@ -28,6 +28,7 @@ header.default {
   height: 101px;
   padding-top: 5px;
   color: white;
+  font-family: "PT-Sans", sans-serif;
   .logo {
     color: white;
     .box {
@@ -49,6 +50,7 @@ header.default {
       font-weight: bold;
       line-height: 20px;
       text-transform: uppercase;
+      font-family: "PT-Sans", sans-serif;
     }
   }
 }
@@ -69,12 +71,16 @@ header.home {
     padding: 4px 8px;
     padding-top: 10px;
     border: 8px solid white;
+    font-family: "PT-Sans", sans-serif;
+
     .year {
       font-size: 10px;
     }
     .title {
       font-size: 40px;
       font-weight: bold;
+      font-family: "PT-Sans", sans-serif;
+
     }
     .subtitle {
       font-size: 12px;

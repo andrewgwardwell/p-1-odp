@@ -3,4 +3,4 @@ title: Learn From Failure
 color: blue
 ---
 
-In hac habitasse platea dictumst. Duis eleifend eget lectus varius aliquet. Aenean vitae pharetra nunc. Morbi aliquet eu urna sed scelerisque. Pellentesque suscipit, sapien ut sagittis posuere, justo erat eleifend ligula, sit amet tempus felis turpis euismod dolor. Integer pretium feugiat eleifend. Cras cursus diam ut aliquet lacinia. Donec ac lectus maximus, maximus arcu quis, aliquam nulla.
+Aenean lacus augue, ullamcorper vel quam a, vestibulum laoreet dui. Curabitur luctus dolor eget odio venenatis fringilla. Nulla ex augue, ornare ac lectus cursus, gravida feugiat tortor. Morbi at nibh vehicula, scelerisque nunc id, ultrices magna. Pellentesque pretium at metus vel hendrerit. Phasellus consectetur, augue vitae lobortis facilisis, diam velit pretium odio, eget suscipit felis quam non arcu. Aliquam dignissim laoreet felis, in egestas ex placerat ac. Aliquam erat volutpat. Cras vel tellus tempus, tincidunt mi in, dictum libero. Fusce commodo lobortis urna.

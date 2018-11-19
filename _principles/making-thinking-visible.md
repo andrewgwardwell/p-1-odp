@@ -3,4 +3,4 @@ title: Making Thinking Visible
 color: red
 ---
 
-Etiam porta tortor et nibh facilisis, ut ullamcorper dui euismod. Quisque at sapien ut sem ullamcorper lobortis ac at lacus. Nullam efficitur lacus et massa cursus tincidunt. Integer accumsan mattis mauris, nec suscipit tellus dictum eu. Nulla facilisi. Mauris et elit odio. Morbi sapien metus, luctus vel maximus sed, congue at mi. Nulla consequat imperdiet accumsan.
+Thinking happens mostly in our heads, invisible to others and even to ourselves. Learning happens through thinking, and learning increases when students externalize their thinking through problems, concepts, and questions. When students make their thinking visible to others, such as through speaking, writing, drawing, or demonstrating, they can see their own thinking progress, get timely feedback, question and discuss their ideas with others, and document their thinking for reflection.

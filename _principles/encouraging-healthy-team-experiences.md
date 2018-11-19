@@ -3,4 +3,4 @@ title: Encouraging Healthy Team Experiences
 color: green
 ---
 
-Mauris elementum libero dignissim, pretium arcu in, cursus quam. Aliquam sagittis tempor venenatis. Mauris suscipit tellus non est egestas dictum. Praesent sit amet metus felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus diam enim, dignissim ac facilisis vel, sagittis nec mi. Sed at elit laoreet, tincidunt felis iaculis, molestie urna. Curabitur convallis rutrum magna eu posuere.
+This principle goes beyond the idea that students benefit from learning in groups, emphasizing that group learning is most effective when these groups learn and function effectively as teams. Encouraging healthy team experiences means providing learning opportunities that support: 1) positive interdependence between group members; 2) the pursuit of shared group goals and individual learning goals; 3) ongoing feedback and communication related to their goals and work. Team-based learning experiences support students’ learning, self-esteem, positive attitudes towards learning, engagement, and persistence in STEM.

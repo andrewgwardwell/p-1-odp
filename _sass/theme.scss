@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Pathway+Gothic+One');
 @import '../node_modules/foundation-sites/scss/_global.scss';
 @import '../node_modules/foundation-sites/scss/foundation.scss';
 @import './font-awsome/scss/fontawesome.scss';
@@ -18,6 +19,14 @@ $green-header-bg: $green;
 $mobile: 480px;
 $tablet: 960px;
 $desktop: 1337px;
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "PT-Sans", sans-serif;
+}
+
+span, p, blockquote, strong, div, em, a, li{
+    font-family: "Lato", sans-serif;
+}
 
 .container{
     display: block;
