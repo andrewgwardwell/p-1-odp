@@ -26,29 +26,68 @@ body.principles {
     }
     h1 {
       position: relative;
-      // font-size: 12px;
-      font-weight: normal;
+      font-weight: bold;
       padding-bottom: 25px;
+      margin: 60px auto 20px;
+      max-width: 1350px;
     }
 
     .principles {
       margin-top: 40px;
       .principle {
-        @extend .link-block;
+        // @extend .link-block;
         display: inline-block;
         break-inside: avoid;
         page-break-inside: avoid;
         -webkit-column-break-inside: avoid;
         margin-bottom: 10px;
-        border-radius: 10px;
-        padding: 5px;
+        height: auto;
+        max-height: 119px;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        width: 100%;
+        border-bottom: 1px solid $dark-gray;
+        padding: 5px 5px 30px;
+        .principle-inner{
+          width: 90%;
+        }
         h2 {
           margin-bottom: 7px;
           margin-top: 15px;
           font-size: 20px;
           font-weight: bold;
         }
-        border: 1px solid transparent;
+        .control-item{
+          width: 100%;
+          margin-top: 20px;
+          display: inline-block;
+          text-align: right;
+          &:hover{
+            cursor: pointer;
+          }
+          span{
+            font-family: "Rajdhani", sans-serif;
+            font-size: 60px;
+            -webkit-font-smoothing: antialiased;
+          }
+        }
+        .minus,
+        .more-info{
+          display: none;
+        }
+        &.active{
+          height: auto;
+          max-height: 2000px;
+          transition: max-height 0.5s ease-in;
+          .plus,
+          .summary{
+            display: none;
+          }
+          .minus,
+          .more-info{
+            display: block;
+          }
+        }
       }
     }
   }

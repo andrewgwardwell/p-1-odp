@@ -1,5 +1,16 @@
 (function($){
     $(document).ready( function() {
+        //expand functionality
+        $('.principle .control-item').click(function(e){
+            var el = $(e.currentTarget);
+            var principle = el.parents('.principle');
+            principle.toggleClass('active');
+        });
+        $('.principle-wrapper .control-item').click(function(e){
+            var el = $(e.currentTarget);
+            var principle = el.parents('.principle-wrapper');
+            principle.toggleClass('information-open');
+        });
         //slideshow on the homepage
         $('.home .slides').slick({
             arrows: false,

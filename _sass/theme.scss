@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Pathway+Gothic+One');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900|Pathway+Gothic+One|Rajdhani:300');
 @import '../node_modules/foundation-sites/scss/_global.scss';
 @import '../node_modules/foundation-sites/scss/foundation.scss';
 @import './font-awsome/scss/fontawesome.scss';
@@ -43,37 +43,37 @@ header{
     box-shadow: 0 0 $header-blur-radius $dark-grey;
 }
 .principle-desc{
-    background: $dark-grey;
+    // background: $dark-grey;
 }
 
-.color-blue{
-    header{
-        background: $blue;
-        box-shadow: 0 0 $header-blur-radius $blue;
-    }
-    .principle-desc{
-        background: $blue;
-    }
-}
+// .color-blue{
+//     header{
+//         background: $blue;
+//         box-shadow: 0 0 $header-blur-radius $blue;
+//     }
+//     .principle-desc{
+//         background: $blue;
+//     }
+// }
 
-.color-green{
-    header{
-        background: $green;
-        box-shadow: 0 0 $header-blur-radius $green;
-    }
-    .principle-desc{
-        background: $green;
-    }
-}
-.color-red{
-    header{
-        background: $red;
-        box-shadow: 0 0 $header-blur-radius $red;
-    }
-    .principle-desc{
-        background: $red;
-    }
-}
+// .color-green{
+//     header{
+//         background: $green;
+//         box-shadow: 0 0 $header-blur-radius $green;
+//     }
+//     .principle-desc{
+//         background: $green;
+//     }
+// }
+// .color-red{
+//     header{
+//         background: $red;
+//         box-shadow: 0 0 $header-blur-radius $red;
+//     }
+//     .principle-desc{
+//         background: $red;
+//     }
+// }
 
 .card-box{
     @include breakpoint(large){

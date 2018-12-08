@@ -3,19 +3,37 @@ layout: default
 ---
 {% include url-filters.html type="any" %}
 <div class="inner">
-    {{ content }}
+  {{ content }}
 
-    <div class="principles">
-      {% for principle in site.principles %}
-        <a class="principle" href="{{ principle.url | relative_url }}">
+  <div class="principles">
+    {% for principle in site.principles %}
+    <div class="principle">
+      <div class="principle-inner">
+        <a href="{{ principle.url | relative_url }}">
           <h2>{{ principle.title }}</h2>
-          {% if(principle.summary) %}
-          <div class="description">{{ principle.summary }}</div>
-          {% else %}
-          <div class="description">{{ principle.content }}</div>
-          {% endif %}
         </a>
-      {% endfor %}
+        <div class="expander">
+          <div class="expander-item summary">
+            <div class="description">{{ principle.summary }}</div>
+          </div>
+          <div class="expander-item more-info">
+            <div class="description">{{ principle.moreInfo }}</div>
+          </div>
+        </div>
+        <div class="control">
+          <div class="control-item plus">
+            <span>
+              +
+            </span>
+          </div>
+          <div class="control-item minus">
+            <span>
+              -
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
+    {% endfor %}
+  </div>
 </div>
-

@@ -1,11 +1,7 @@
-.principle-desc{
-    // width: 100%;
-    padding: 10px 30px;
-    color: #FFF;
-    margin-bottom: 30px;
-    margin-top: 40px;
+.principle-wrapper{
+    background: $light-gray;
     h1{
-        text-transform: none;
+        text-transform: uppercase;
     }
 
     blockquote{
@@ -23,4 +19,67 @@
           display: inline;
         }
       }
+    .principle-desc{
+        padding: 10px 30px;
+        // margin-bottom: 30px;
+        margin-top: 40px;
+        .inner {
+            width: 75%;
+            // font-weight: 600;
+            margin-bottom: 20px;
+        }
+    }
+    .information{
+        padding: 0px 30px;
+    }
+    .sightings-container{
+        background: white;
+        padding: 20px 0;
+    }
+    .information{
+        display: block;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 1s ease-in .5s, margin .25s ease-in;
+    }
+    .controls{
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 20px 0 0;
+        overflow: hidden;
+        position: relative;
+        height: 20px;
+        .control-item{
+            transition: all .5s ease-in-out 1.5s;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .show-sightings{
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+    }
+    &.information-open{
+        .controls{
+            .show-sightings{
+                opacity: 1;
+                transform: translateY(0%);
+            }
+            .show-information{
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+        }
+        .information{
+            max-height: 1000px;
+            margin-bottom: 20px;
+            transition: max-height 1s ease-out 0s, margin .25s ease-in;
+        }
+    }
 }
+

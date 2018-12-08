@@ -2,35 +2,53 @@
 layout: default
 ---
 {% include url-filters.html type="principle" %}
-<div class="principle-desc">
-  <h1>{{ page.title }}</h1>
-  <div class="inner">
-      {{ content }}
-  </div>
-</div>
+<div class="principle-wrapper">
 
-{% assign sightings = '' | split: '' %}
-{% for sighting in site.sightings %}
-  {% if sighting.principle != page.title %}{% continue %}{% endif %}
-  {% assign sightings = sightings | push: sighting %}
-{% endfor %}
-
-{% if sightings.size == 0 %}
-  <h2>Sightings</h2>
-  <p>Watch this space! Sightings for this principle are still being
-  collected.</p>
-{% endif %}
-
-<div class="sightings random grid">
-  {% for sighting in sightings %}
-  <a class="sighting card show-card" href={{ sighting.url | relative_url }}>
+  <div class="principle-desc">
+    <h1>{{ page.title }}</h1>
     <div class="inner">
-        <div class="principle">{{ sighting.principle }}</div>
-        <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}"/>
-        <h1>{{ sighting.title }}</h1>
-        <div class="summary">{{ sighting.summary | default: 'TBD' }}</div>
+      {{ page.moreInfo }}
     </div>
-  </a>
-  {% endfor %}
-</div>
+    <div class="controls">
+      <div class="control-item show-information">
+        <i class="fab fa-readme"></i>
+        <span>More Info</span>
+      </div>
+      <div class="control-item show-sightings">
+        <i class="fab fa-youtube"></i>
+        <span>Video Sightings</span>
+      </div>
+    </div>
+    <hr />
+  </div>
+  <div class="information">
+    {{content}}
+  </div>
+  <div class="sightings-container">
+    {% assign sightings = '' | split: '' %}
+    {% for sighting in site.sightings %}
+    {% if sighting.principle != page.title %}{% continue %}{% endif %}
+    {% assign sightings = sightings | push: sighting %}
+    {% endfor %}
 
+    {% if sightings.size == 0 %}
+    <h2>Sightings</h2>
+    <p>Watch this space! Sightings for this principle are still being
+      collected.</p>
+    {% endif %}
+
+    <div class="sightings random grid">
+      {% for sighting in sightings %}
+      <a class="sighting card show-card" href={{ sighting.url | relative_url }}>
+        <div class="inner">
+          <div class="principle">{{ sighting.principle }}</div>
+          <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}" />
+          <h1>{{ sighting.title }}</h1>
+          <div class="summary">{{ sighting.summary | default: 'TBD' }}</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+</div>
