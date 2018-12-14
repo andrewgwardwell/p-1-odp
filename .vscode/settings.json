@@ -1,0 +1,8 @@
+{
+  "emmet.includeLanguages": {
+    "jekyll": "html",
+    "scss": "css"
+  },
+  "editor.formatOnSave": false,
+  "html.format.enable": false
+}

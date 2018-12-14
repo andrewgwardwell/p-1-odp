@@ -6,6 +6,7 @@ course-number: ENGR 321
 course-title: Elacanisms
 course-instructor: Brad Minch
 color: red
+teaser: "During retrospectives, students reflect on their progress and process during the two previous weeks of a design sprint, and then share their reflections with their team."
 ---
 
 * Team reflection

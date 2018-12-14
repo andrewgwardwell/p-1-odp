@@ -6,6 +6,7 @@ course-number: AHSE 2114
 course-title: Science Fiction and Historical Context
 course-instructor: Rob Martello
 color: blue
+teaser: "Students receive open-ended prompts and choose which concepts they wish to explore as well as how to communicate those thoughts."
 ---
 
 * Choice in what to work on

@@ -9,6 +9,7 @@ course-instructors:
 - Aaron Hoover
 - Brad Minch
 color: blue
+teaser: "Students decided on their own strategy and process for completing projects."
 ---
 
 * Scaffolded process development

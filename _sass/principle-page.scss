@@ -42,6 +42,40 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 1s ease-in .5s, margin .25s ease-in;
+        h3{
+            padding-top: 20px;
+        }
+        p{
+            margin: 0 0 20px;
+        }
+        hr{
+            margin: 40px 0;
+        }
+        ul{
+            list-style-type:none;
+            li:before{
+                content:"-";
+                padding-right: 4px;
+            }
+        }
+        ul{
+            margin: 10px 0;
+            padding: 0;
+        }
+        ol{
+            margin: 10px 0;
+            padding: 0 20px;
+        }
+        ol, ul {
+            ul, ol{
+                list-style-type:none;
+                padding-left: 0;
+                li{
+                    padding: 0 0 5px;
+                }
+            }
+        }
+
     }
     .controls{
         text-transform: uppercase;
@@ -76,7 +110,7 @@
             }
         }
         .information{
-            max-height: 1000px;
+            max-height: 2599px;
             margin-bottom: 20px;
             transition: max-height 1s ease-out 0s, margin .25s ease-in;
         }

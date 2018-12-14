@@ -10,6 +10,7 @@ course-instructors:
 - Mark Somerville
 media-key: 5_QEA_Making Thinking Visible
 color: green
+teaser: "Using whiteboards helps make it easier for students to share their ideas, encourages students to present their ideas systematically, and illustrate their views graphically."
 ---
 
 * Step by step illustrations

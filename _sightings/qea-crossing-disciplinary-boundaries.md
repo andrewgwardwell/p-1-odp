@@ -10,6 +10,7 @@ course-instructors:
 - Mark Somerville
 media-key: 4_QEA_Crossing Disciplinary Boundaries
 color: green
+teaser: "Quantitative Engineering Analysis is an interdisciplinary class in which students learn the basics of mathematics, physics, and engineering in and actual engineering context."
 ---
 
 * Integrated math, physics and engineering course

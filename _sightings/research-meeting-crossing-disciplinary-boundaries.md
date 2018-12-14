@@ -6,6 +6,7 @@ course-number: Return Design + Capstone
 course-title: Integrated Research Project
 course-instructor: Tim Sauder
 color: blue
+teaser: "Graphic design students and faculty collaborate with Air quality Impact Research group students and faculty to bring grounded information to a broader population of people."
 ---
 >Ius ne alia graece. Verear bonorum ius et, sit at vivendum perfecto ocurreret, errem homero conclusionemque cu eum. Cum ea recusabo reformidans disputationi.
 

@@ -1,37 +1,43 @@
 // Sightings page
 body.sighting {
-  @include breakpoint(large){
+  @include breakpoint(large) {
     .card:first-child,
-    .card:nth-child(4n+1){
+    .card:nth-child(4n + 1) {
       margin-left: 0;
     }
   }
-  @include breakpoint(xlarge){
-    .card:nth-child(4n){
+  @include breakpoint(xlarge) {
+    .card:nth-child(4n) {
       margin-left: 1.333333%;
     }
     .card:first-child,
-    .card:nth-child(4n+1){
+    .card:nth-child(4n + 1) {
       margin-left: 0;
     }
   }
-  .markdown{
-    h1,h2,h3,h4,h5,h6{
+  .markdown {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       margin-block-end: 0px;
     }
-    p,span{
-      margin-block-start: .25rem;
+    p,
+    span {
+      margin-block-start: 0.25rem;
       display: inline;
     }
-    blockquote{
+    blockquote {
       font-weight: bold;
       margin: 10px 0 30px;
       &::before {
-        content: '“';
+        content: "“";
         display: inline;
       }
       &::after {
-        content: '”';
+        content: "”";
         display: inline;
       }
     }
@@ -42,63 +48,63 @@ body.sighting {
     flex-direction: row;
     background: $light-gray;
     margin: 40px 0;
-    .sighting-item{
+    .sighting-item {
       display: block;
       float: left;
       padding: 10px;
     }
-    .sighting-item-left{
-      @include breakpoint(large){
+    .sighting-item-left {
+      @include breakpoint(large) {
         width: 66.666%;
       }
-      @include breakpoint(xlarge){
+      @include breakpoint(xlarge) {
         width: 75%;
       }
-      .inner{
-        .principle{
+      .inner {
+        .principle {
           padding-bottom: 10px;
           display: inline-block;
         }
       }
     }
-    .sighting-item-right{
-      @include breakpoint(large){
+    .sighting-item-right {
+      @include breakpoint(large) {
         width: 33.333%;
       }
-      @include breakpoint(xlarge){
+      @include breakpoint(xlarge) {
         width: 25%;
       }
-      .inner{
+      .inner {
         padding-top: 30px;
         padding-right: 20px;
       }
     }
-    .meta-item{
+    .meta-item {
       width: 100%;
       float: left;
       border-top: 1px solid $dark-grey;
       padding: 10px 0 30px;
-      & > *{
+      & > * {
         display: inline-block;
         width: 100%;
       }
     }
-    .meta-detail-link{
-      &:hover{
+    .meta-detail-link {
+      &:hover {
         text-decoration: none;
-        a{
+        a {
           text-decoration: none;
         }
-        span{
+        span {
           // border-width: 2px;
         }
       }
-      span{
+      span {
         border-bottom: 1px solid;
         // padding-bottom: 1px;
       }
     }
-    .meta-label{
+    .meta-label {
       text-transform: uppercase;
       font-weight: 600;
     }
@@ -118,7 +124,6 @@ body.sighting {
       width: 640px;
     }
     .quote {
-
     }
     aside {
       padding-left: 10px;
@@ -130,7 +135,7 @@ body.sighting {
         font-weight: bold;
         text-transform: uppercase;
         &::after {
-          content: ':';
+          content: ":";
         }
       }
       dd {
@@ -146,6 +151,7 @@ body.sighting {
     position: relative;
     .sightings {
       display: flex;
+      flex-wrap: wrap;
     }
     .buttons {
       padding-left: 15px;

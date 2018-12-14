@@ -9,6 +9,7 @@ course-instructors:
 - Aaron Hoover
 - Brad Minch
 color: green
+teaser: "Creating visual artifacts not only allows for increased communication and sharing of ideas, but also nurtures a team’s ownership of their workspace."
 ---
 
 * Visual representations

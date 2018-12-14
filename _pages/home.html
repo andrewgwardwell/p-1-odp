@@ -30,7 +30,7 @@ permalink: /
               <div class="slide" style="background-image: url('https://olin-design-principles.s3.amazonaws.com/carousel/carousel_1.jpg')">
                 <div class="content">
                   <div class="text">
-                      <div class="title">1 We do things in our own special way. Want to see?</div>
+                      <div class="title">We do things in our own special way. Want to see?</div>
                       <div>
                         Take a look around and feel free to riff on our ideas or maybe just
                         get inspired to come up with some of your own.
@@ -38,10 +38,10 @@ permalink: /
                   </div>
                 </div>
               </div>
-              <div class="slide" style="background-image: url('https://olin-design-principles.s3.amazonaws.com/carousel/carousel_1.jpg')">
+              <div class="slide" style="background-image: url('http://external.sjp.ac.lk/wp-content/uploads/2016/12/business-admin2.jpg')">
                 <div class="content">
                     <div class="text">
-                        <div class="title">2 We do things in our own special way. Want to see?</div>
+                        <div class="title">Making Thinking Visible</div>
                         <div>
                           Take a look around and feel free to riff on our ideas or maybe just
                           get inspired to come up with some of your own.
@@ -49,10 +49,10 @@ permalink: /
                     </div>
                 </div>
               </div>
-              <div class="slide" style="background-image: url('https://olin-design-principles.s3.amazonaws.com/carousel/carousel_1.jpg')">
+              <div class="slide" style="background-image: url('https://www.quickbase.com/blog/wp-content/uploads/2012/12/Team-Building.jpg')">
                 <div class="content">
                     <div class="text">
-                        <div class="title">3 We do things in our own special way. Want to see?</div>
+                        <div class="title">Crossing Disciplinary Boundaries</div>
                         <div>
                           Take a look around and feel free to riff on our ideas or maybe just
                           get inspired to come up with some of your own.
@@ -76,10 +76,10 @@ permalink: /
         <div class="principle">{{ sighting.principle }}</div>
         <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}" />
         <h1>{{ sighting.title }}</h1>
-        {% if sighting.summary %}
-        <div class="quoted summary">{{ sighting.summary | default: 'TBD' }}</div>
+        {% if sighting.teaser %}
+        <div class="quoted summary">{{ sighting.teaser | default: 'TBD' }}</div>
         {% else %}
-        <div class="summary">Summary TBD</div>
+        <div class="summary">First</div>
         {% endif %}
       </div>
     </a>
@@ -93,10 +93,10 @@ permalink: /
         <div class="principle">{{ sighting.principle }}</div>
         <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}" />
         <h1>{{ sighting.title }}</h1>
-        {% if sighting.summary %}
-        <div class="quoted summary">{{ sighting.summary | default: 'TBD' }}</div>
+        {% if sighting.teaser %}
+        <div class="quoted summary">{{ sighting.teaser | default: 'TBD' }}</div>
         {% else %}
-        <div class="summary">Summary TBD</div>
+        <div class="summary">Second</div>
         {% endif %}
       </div>
     </a>
