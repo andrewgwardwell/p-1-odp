@@ -102,7 +102,7 @@ layout: default
           <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}"/>
           <h1>{{ sighting.title }}</h1>
           {% if sighting.teaser %}
-            <div class="quoted summary">{{ sighting.teaser }}</div>
+            <div class="summary">{{ sighting.teaser }}</div>
           {% else %}
             <div class="summary">Summary TBD</div>
           {% endif %}
@@ -115,7 +115,7 @@ layout: default
             <div class="principle">FPO Principle</div>
             <img src="https://olin-design-principles.s3.amazonaws.com/8_Sci Fi_Making Thinking Visible_Thumbnail.jpg"/>
             <h1>FPO Sighting</h1>
-            <div class="quoted summary">
+            <div class="summary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec neque felis. Nunc rhoncus purus venenatis ligula dictum semper molestie id libero. Interdum et malesuada.</div>
             </div>
       </a>

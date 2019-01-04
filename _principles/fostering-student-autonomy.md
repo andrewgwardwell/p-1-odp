@@ -1,8 +1,8 @@
 ---
 title: Fostering Student Autonomy
 color: green
-summary: Making connections between concepts across disciplines and applying knowledge across disciplines deepens students learning and… 
-moreInfo: "Nullam ornare semper eros et accumsan. Duis congue commodo congue. Praesent sit amet lacus quis elit tempus vestibulum ac non metus. Pellentesque malesuada consectetur turpis, at egestas enim hendrerit eget. Aenean ac ornare nibh, sit amet sagittis velit. Mauris nisl sapien, eleifend nec consequat tempus, tincidunt id nisl. Fusce pharetra in eros ut tempus. Suspendisse lobortis ut dui vel viverra. Aliquam efficitur venenatis turpis vel accumsan. Cras consequat auctor libero ut convallis. Praesent a pretium metus, vitae commodo nisi. Sed laoreet bibendum lectus."
+summary: Autonomous learning is the feeling that one is in control of and responsible for their own learning and success… 
+moreInfo: "Autonomous learning is the feeling that one is in control of and responsible for their own learning and success – both in terms of what they learn and how they learn. When teachers provide opportunities for students to learn autonomously, such as through supporting students with making decisions about their own learning and charting their own learning path, students become more independent, self-directed learners. Students who feel more autonomous in their learning have higher motivation to learn, are better able to self-monitor their own learning, are more aware of their own progress, have higher self-efficacy, and find value in their learning. "
 ---
 
 ### What is it?

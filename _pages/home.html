@@ -77,7 +77,7 @@ permalink: /
         <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}" />
         <h1>{{ sighting.title }}</h1>
         {% if sighting.teaser %}
-        <div class="quoted summary">{{ sighting.teaser | default: 'TBD' }}</div>
+        <div class="summary">{{ sighting.teaser | default: 'TBD' }}</div>
         {% else %}
         <div class="summary">First</div>
         {% endif %}
@@ -94,7 +94,7 @@ permalink: /
         <img src="{{ sighting.media-key | prepend: site.media_base_url | append: '_Thumbnail.jpg' }}" />
         <h1>{{ sighting.title }}</h1>
         {% if sighting.teaser %}
-        <div class="quoted summary">{{ sighting.teaser | default: 'TBD' }}</div>
+        <div class="summary">{{ sighting.teaser | default: 'TBD' }}</div>
         {% else %}
         <div class="summary">Second</div>
         {% endif %}
