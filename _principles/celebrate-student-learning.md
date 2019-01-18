@@ -1,7 +1,7 @@
 ---
 title: Celebrate Student Learning
 color: red
-summary: Making connections between concepts across disciplines and applying knowledge across disciplines deepens students learning and…
+summary: The principle goes beyond the idea that students benefit from learning in groups, emphasizing that group learning is most effective…
 moreInfo: "The principle goes beyond the idea that students benefit from learning in groups, emphasizing that group learning is most effective when these groups learn and function effectively as teams. Encouraging healthy team experiences means providing learning opportunities that support: 1) positive interdependence between group members; 2) the pursuit of shared group goals and individual learning goals; 3) ongoing feedback and communication related to their goals and work. Team-based learning experiences support students learning, self-esteem, positive attitudes toward learning, engagement, and persistence in STEM."
 ---
 ### FPO What is it?
